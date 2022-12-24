@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import { Color } from "./colors";
 import { Media } from "./mediaBreackPoints";
 
 const H1 = css`
@@ -8,7 +7,6 @@ const H1 = css`
   font-weight: 600;
   font-size: 40px;
   line-height: 60px;
-  color: ${Color.GRAPHITE};
 
   ${Media.S} {
     font-size: 32px;
@@ -26,7 +24,6 @@ const H2 = css`
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
-  color: ${Color.GRAPHITE};
 
   ${Media.S} {
     font-size: 24px;
@@ -44,7 +41,6 @@ const H3 = css`
   font-weight: 600;
   font-size: 20px;
   line-height: 32px;
-  color: ${Color.GRAPHITE};
 
   ${Media.S} {
     font-size: 20px;
@@ -62,7 +58,6 @@ const SUBLINE_PRIMARY = css`
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  color: ${Color.GRAPHITE};
 
   ${Media.S} {
     font-size: 18px;
@@ -77,7 +72,6 @@ const SUBLINE_SUB_PRIMARY = css`
   font-size: 16px;
   line-height: 24px;
   color: #323537;
-  color: ${Color.GRAPHITE};
 `;
 
 const SUBLINE_BUTTON = css`
@@ -86,7 +80,6 @@ const SUBLINE_BUTTON = css`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: ${Color.GRAPHITE};
 `;
 
 const BODYTEXT = css`
@@ -95,7 +88,6 @@ const BODYTEXT = css`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: ${Color.GRAPHITE};
 `;
 
 export const Typography = {
