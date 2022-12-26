@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
 
 const Controllers = styled.div`
   width: 100%;
-  display: grid;
+  display: flex;
   gap: 41px;
 `;
 

@@ -71,7 +71,6 @@ const SUBLINE_SUB_PRIMARY = css`
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #323537;
 `;
 
 const SUBLINE_BUTTON = css`

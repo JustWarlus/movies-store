@@ -1,6 +1,7 @@
 import React from "react";
 import { LogoIcon } from "../../assets";
 import { PAGE } from "../../router";
+import { Profile } from "../Profile";
 import { SearchInput } from "../SearchInput";
 import { StyledHeader, Controllers, StyledLogo } from "./style";
 
@@ -12,6 +13,7 @@ export const Header = () => {
       </StyledLogo>
       <Controllers>
         <SearchInput />
+        <Profile />
       </Controllers>
     </StyledHeader>
   );

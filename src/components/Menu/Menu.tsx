@@ -1,7 +1,7 @@
 import React from "react";
 import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "../../assets";
 import { PAGE } from "../../router";
-import { StyledMenu, Navigation, StyledLink, Footer, LinkText } from "./style";
+import { StyledMenu, Navigation, StyledLink, Copirate, LinkText } from "./style";
 
 export const Menu = () => {
   return (
@@ -24,7 +24,7 @@ export const Menu = () => {
           <LinkText>Settings</LinkText>
         </StyledLink>
       </Navigation>
-      <Footer>© All Rights Reserved</Footer>
+      <Copirate>© All Rights Reserved</Copirate>
     </StyledMenu>
   );
 };

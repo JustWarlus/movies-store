@@ -1,5 +1,6 @@
 import React from "react";
+import { MovieList } from "../components";
 
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return <MovieList />;
 };

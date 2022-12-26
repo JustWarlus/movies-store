@@ -4,5 +4,16 @@ import { ReactComponent as HomeIcon } from "./icons/home.svg";
 import { ReactComponent as TrendsIcon } from "./icons/trends.svg";
 import { ReactComponent as SettingsIcon } from "./icons/settings.svg";
 import { ReactComponent as FavoritesIcon } from "./icons/favorites.svg";
+import { ReactComponent as ProfileDefaultIcon } from "./icons/profileDefault.svg";
+import { ReactComponent as ArrowIcon } from "./icons/profileArrow.svg";
 
-export { LogoIcon, SearchMenuIcon, HomeIcon, TrendsIcon, SettingsIcon, FavoritesIcon };
+export {
+  LogoIcon,
+  SearchMenuIcon,
+  HomeIcon,
+  TrendsIcon,
+  SettingsIcon,
+  FavoritesIcon,
+  ProfileDefaultIcon,
+  ArrowIcon,
+};

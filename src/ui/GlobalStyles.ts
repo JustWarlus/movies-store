@@ -4,7 +4,7 @@ import { reset } from "./reset";
 
 export const GlobalStyles = createGlobalStyle`
     body{
-        background: ${Color.LIGHT};
+        background: ${Color.BLACK};
     }
     ${reset}
 `;

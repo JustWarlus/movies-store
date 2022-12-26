@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { Color, Typography } from "../../ui";
 
 const StyledMenu = styled.div`
-  display: grid;
-  align-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 const Navigation = styled.nav`
   display: flex;
@@ -15,17 +16,25 @@ const StyledLink = styled(Link)`
   ${Typography.SUBLINE_PRIMARY}
   color: ${Color.SECONDARY};
   display: flex;
-  gap: 23px;
+  gap: 12px;
 
   &:active,
   &:hover {
     color: ${Color.PRIMARY_MAIN};
+    svg {
+      path {
+        fill: ${Color.PRIMARY_MAIN};
+      }
+    }
   }
   &:disabled {
     color: ${Color.GRAPHITE};
   }
 `;
-const Footer = styled.footer``;
+const Copirate = styled.footer`
+  color: ${Color.LIGHT};
+  ${Typography.SUBLINE_SUB_PRIMARY}
+`;
 const LinkText = styled.span``;
 
-export { StyledMenu, Navigation, StyledLink, Footer, LinkText };
+export { StyledMenu, Navigation, StyledLink, Copirate, LinkText };

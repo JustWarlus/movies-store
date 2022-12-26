@@ -2,5 +2,5 @@ import React from "react";
 import { Input } from "./style";
 
 export const SearchInput = () => {
-  return <Input />;
+  return <Input placeholder="Search..." />;
 };
