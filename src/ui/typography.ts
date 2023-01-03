@@ -89,6 +89,14 @@ const BODYTEXT = css`
   line-height: 24px;
 `;
 
+const SUBLINE_SUB_BUTTON = css`
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+`;
+
 export const Typography = {
   H1,
   H2,
@@ -97,4 +105,5 @@ export const Typography = {
   SUBLINE_SUB_PRIMARY,
   SUBLINE_BUTTON,
   BODYTEXT,
+  SUBLINE_SUB_BUTTON,
 };

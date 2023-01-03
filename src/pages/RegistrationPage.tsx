@@ -1,5 +1,6 @@
 import React from "react";
+import { FormRegistration } from "../components";
 
 export const RegistrationPage = () => {
-  return <div>RegistrationPage</div>;
+  return <FormRegistration />;
 };
