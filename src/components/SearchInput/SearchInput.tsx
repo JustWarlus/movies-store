@@ -1,6 +1,12 @@
 import React from "react";
-import { Input } from "./style";
+import { FilterIcon } from "../../assets";
+import { Input, Search } from "./style";
 
 export const SearchInput = () => {
-  return <Input placeholder="Search..." />;
+  return (
+    <Search>
+      <Input placeholder="Search..." />
+      <FilterIcon />
+    </Search>
+  );
 };

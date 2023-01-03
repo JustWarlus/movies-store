@@ -2,66 +2,65 @@ import { css } from "styled-components";
 import { Media } from "./mediaBreackPoints";
 
 const LEVEL_1 = css`
-  margin-top: 64px;
-
+  margin-bottom: 64px;
   ${Media.S} {
-    margin-top: 56px;
+    margin-bottom: 56px;
   }
   ${Media.XSS} {
-    margin-top: 48px;
+    margin-bottom: 48px;
   }
 `;
 const LEVEL_2 = css`
-  margin-top: 56px;
+  margin-bottom: 56px;
   ${Media.S} {
-    margin-top: 48px;
+    margin-bottom: 48px;
   }
   ${Media.XSS} {
-    margin-top: 40px;
+    margin-bottom: 40px;
   }
 `;
 
 const LEVEL_3 = css`
-  margin-top: 48px;
+  margin-bottom: 48px;
   ${Media.XSS} {
-    margin-top: 40px;
+    margin-bottom: 40px;
   }
 `;
 
 const LEVEL_4 = css`
-  margin-top: 40px;
+  margin-bottom: 40px;
   ${Media.XSS} {
-    margin-top: 32px;
+    margin-bottom: 32px;
   }
 `;
 
 const LEVEL_5 = css`
-  margin-top: 32px;
+  margin-bottom: 32px;
   ${Media.XSS} {
-    margin-top: 24px;
+    margin-bottom: 24px;
   }
 `;
 
 const LEVEL_6 = css`
-  margin-top: 24px;
+  margin-bottom: 24px;
   ${Media.XSS} {
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
 `;
 
 const LEVEL_7 = css`
-  margin-top: 20px;
+  margin-bottom: 20px;
   ${Media.XSS} {
-    margin-top: 16px;
+    margin-bottom: 16px;
   }
 `;
 
 const LEVEL_8 = css`
-  margin-top: 16px;
+  margin-bottom: 16px;
 `;
 
 const LEVEL_9 = css`
-  margin-top: 8px;
+  margin-bottom: 8px;
 `;
 
 export const Indents = {

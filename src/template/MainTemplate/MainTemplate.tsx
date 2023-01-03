@@ -1,16 +1,12 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
 import { Header, Menu } from "../../components";
-import { StyledMainTemplate, Content } from "./style";
+import { StyledMainTemplate, StyledOutlet } from "./style";
 
 export const MainTemplate = () => {
   return (
     <StyledMainTemplate>
+      <Menu />
       <Header />
-      <Content>
-        <Menu />
-        <Outlet />
-      </Content>
+      <StyledOutlet />
     </StyledMainTemplate>
   );
 };

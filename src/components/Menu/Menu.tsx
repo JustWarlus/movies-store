@@ -1,11 +1,15 @@
 import React from "react";
 import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "../../assets";
 import { PAGE } from "../../router";
-import { StyledMenu, Navigation, StyledLink, Copirate, LinkText } from "./style";
+import { StyledMenu, Navigation, StyledLink, Copirate, LinkText, StyledLogo } from "./style";
+import { LogoIcon } from "../../assets";
 
 export const Menu = () => {
   return (
     <StyledMenu>
+      <StyledLogo to={PAGE.HOME}>
+        <LogoIcon />
+      </StyledLogo>
       <Navigation>
         <StyledLink to={PAGE.HOME}>
           <HomeIcon />

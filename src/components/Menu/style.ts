@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color, Typography } from "../../ui";
+import { Color, Indents, Typography } from "../../ui";
 
 const StyledMenu = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  grid-area: 1 / 1 / 3 / 2;
 `;
 const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: 20px;
 `;
 const StyledLink = styled(Link)`
+  ${Indents.LEVEL_4}
   ${Typography.SUBLINE_PRIMARY}
   color: ${Color.SECONDARY};
   display: flex;
@@ -37,4 +38,9 @@ const Copirate = styled.footer`
 `;
 const LinkText = styled.span``;
 
-export { StyledMenu, Navigation, StyledLink, Copirate, LinkText };
+const StyledLogo = styled(Link)`
+  margin-top: 8px;
+  ${Indents.LEVEL_2}
+`;
+
+export { StyledMenu, Navigation, StyledLink, Copirate, LinkText, StyledLogo };

@@ -1,6 +1,10 @@
 import React from "react";
 import { Badge } from "./style";
 
-export const BadgeRating = () => {
-  return <Badge>7.8</Badge>;
+interface IBadgeRating {
+  rating: number;
+}
+
+export const BadgeRating = ({ rating }: IBadgeRating) => {
+  return <Badge rating={rating}>{rating}</Badge>;
 };

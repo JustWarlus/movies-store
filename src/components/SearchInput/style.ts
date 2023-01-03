@@ -4,7 +4,7 @@ import { Color, Typography } from "../../ui";
 
 const Input = styled.input`
   width: 100%;
-  padding: 16px 16px 16px 20px;
+  padding: 16px 56px 16px 20px;
   box-sizing: border-box;
   border-radius: 10px;
   background: ${Color.GRAPHITE};
@@ -26,4 +26,16 @@ const Input = styled.input`
   }
 `;
 
-export { Input };
+const Search = styled.div`
+  width: 100%;
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 19px;
+    right: 16px;
+    cursor: pointer;
+  }
+`;
+
+export { Input, Search };

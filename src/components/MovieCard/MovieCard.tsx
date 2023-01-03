@@ -7,7 +7,7 @@ export const MovieCard = () => {
   return (
     <StyledMovieCard>
       <Poster>
-        <BadgeRating />
+        <BadgeRating rating={5.8} />
       </Poster>
       <NameMovie>Название фильма</NameMovie>
       <Categories>
