@@ -11,7 +11,6 @@ export const MovieList = () => {
       <MovieCard />
       <MovieCard />
       <MovieCard />
-      <MovieCard />
     </StyledMovieList>
   );
 };

@@ -22,9 +22,6 @@ export const reset = css`
     padding: 0;
     list-style: none;
   }
-  body {
-    min-height: 100vh;
-  }
   a {
     text-decoration-skip-ink: auto;
     text-decoration: none;

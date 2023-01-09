@@ -3,15 +3,16 @@ import styled from "styled-components";
 import { Color, Indents, Typography } from "../../ui";
 
 const StyledMenu = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  grid-area: 1 / 1 / 3 / 2;
+  grid-area: 2 / 1 / 3 / 2;
+  position: relative;
+  flex: 1;
 `;
+
 const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
 `;
+
 const StyledLink = styled(Link)`
   ${Indents.LEVEL_4}
   ${Typography.SUBLINE_PRIMARY}
@@ -32,15 +33,14 @@ const StyledLink = styled(Link)`
     color: ${Color.GRAPHITE};
   }
 `;
+
 const Copirate = styled.footer`
+  position: absolute;
+  bottom: 0;
   color: ${Color.LIGHT};
   ${Typography.SUBLINE_SUB_PRIMARY}
 `;
+
 const LinkText = styled.span``;
 
-const StyledLogo = styled(Link)`
-  margin-top: 8px;
-  ${Indents.LEVEL_2}
-`;
-
-export { StyledMenu, Navigation, StyledLink, Copirate, LinkText, StyledLogo };
+export { StyledMenu, Navigation, StyledLink, Copirate, LinkText };
