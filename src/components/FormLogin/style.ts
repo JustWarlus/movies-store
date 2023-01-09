@@ -23,6 +23,10 @@ const ForgetPassword = styled(Link)`
     color: ${Color.PRIMARY_SUB};
   }
 `;
+const ErrorMessage = styled.span`
+  ${Typography.SUBLINE_SUB_PRIMARY}
+  color: ${Color.ERROR};
+`;
 
 const ChangeForm = styled.div``;
 const SubText = styled.span``;
@@ -39,4 +43,5 @@ export {
   ChangeForm,
   SubText,
   LinkSignUp,
+  ErrorMessage,
 };

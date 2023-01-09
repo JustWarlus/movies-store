@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-import { IMovie } from "../types/types";
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+// import { IMovie } from "../types/types";
 
 // export const movieApi = createApi({
 //   reducerPath: "movieAPI",
