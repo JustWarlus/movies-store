@@ -1,16 +1,18 @@
 import React from "react";
+import { IMoviePosterAPI } from "types/types";
 import { MovieCard } from "../MovieCard";
 import { StyledMovieList } from "./style";
 
-export const MovieList = () => {
+interface IProps {
+  movies: IMoviePosterAPI[];
+}
+
+export const MovieList = ({ movies }: IProps) => {
   return (
     <StyledMovieList>
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
+      {movies.map((movie) => {
+        return <MovieCard key={movie.imdbID} movie={movie} />;
+      })}
     </StyledMovieList>
   );
 };

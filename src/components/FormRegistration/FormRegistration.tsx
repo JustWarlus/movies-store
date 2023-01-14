@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PAGE } from "../../router";
-import { useAppDispatch } from "hooks";
+import { useAppDispatch } from "store/hooks/hooks";
 import {
   StyledFrom,
   TitleForm,

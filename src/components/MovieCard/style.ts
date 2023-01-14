@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import { Color, Indents, Typography } from "../../ui";
 
+interface IPoster {
+  poster: string;
+}
+
 const StyledMovieCard = styled.div`
   width: 266px;
 `;
-const Poster = styled.div`
+const Poster = styled.div<IPoster>`
   min-width: 266px;
   min-height: 357px;
   border-radius: 20px;
   padding: 20px;
   box-sizing: border-box;
   ${Indents.LEVEL_6}
-  background-image: url("https://m.media-amazon.com/images/M/MV5BOTk2NDNjZWQtMGY0Mi00YTY2LWE5MzctMGRhZmNlYzljYTg5XkEyXkFqcGdeQXVyMTAyNjg4NjE0._V1_SX300.jpg");
+  background-image: url(${({ poster }) => poster});
 `;
 const NameMovie = styled.span`
   display: block;

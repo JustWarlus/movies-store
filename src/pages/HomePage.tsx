@@ -1,6 +1,10 @@
-import React from "react";
+import { useGetMovieByTitleQuery } from "services";
+import { TransformMoviePosters } from "utilits";
+
 import { MovieList } from "../components";
 
 export const HomePage = () => {
-  return <MovieList />;
+  const { data, isSuccess } = useGetMovieByTitleQuery("dog");
+
+  if (data) return <MovieList movies={data.Search} />;
 };
