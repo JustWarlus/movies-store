@@ -7,6 +7,8 @@ import { ReactComponent as FavoritesIcon } from "./icons/favorites.svg";
 import { ReactComponent as ProfileDefaultIcon } from "./icons/profileDefault.svg";
 import { ReactComponent as ArrowIcon } from "./icons/profileArrow.svg";
 import { ReactComponent as FilterIcon } from "./icons/filter.svg";
+import { ReactComponent as ImbdIcon } from "./icons/imbd.svg";
+import { ReactComponent as NotFoundIcon } from "./icons/notFound.svg";
 import backroundSign from "./images/backroundSignPage.png";
 
 export {
@@ -20,4 +22,6 @@ export {
   ArrowIcon,
   FilterIcon,
   backroundSign,
+  ImbdIcon,
+  NotFoundIcon,
 };

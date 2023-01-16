@@ -1,10 +1,9 @@
 import { useGetMovieByTitleQuery } from "services";
-import { TransformMoviePosters } from "utilits";
-
 import { MovieList } from "../components";
 
 export const HomePage = () => {
-  const { data, isSuccess } = useGetMovieByTitleQuery("dog");
+  const { data } = useGetMovieByTitleQuery("green");
 
   if (data) return <MovieList movies={data.Search} />;
+  return <></>;
 };

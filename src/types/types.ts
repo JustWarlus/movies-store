@@ -25,7 +25,7 @@ export interface IMovieInfoAPI {
   Website: string;
   Response: string;
 }
-
+export type TableInfoKey = keyof IMovieInfoAPI;
 interface IRatings {
   Source: string;
   Value: string;

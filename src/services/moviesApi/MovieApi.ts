@@ -7,7 +7,7 @@ export const movieApi = createApi({
   reducerPath: "movieAPI",
   baseQuery: fetchBaseQuery({ baseUrl: "https://www.omdbapi.com/" }),
   endpoints: (build) => ({
-    getMovieById: build.query<IMovieInfoAPI, string>({
+    getMovieById: build.query<IMovieInfoAPI, string | undefined>({
       query: (id) => ({
         url: "",
         params: {
@@ -17,7 +17,7 @@ export const movieApi = createApi({
       }),
     }),
 
-    getMovieByTitle: build.query<IDataMoviePosterApi, string>({
+    getMovieByTitle: build.query<IDataMoviePosterApi, string | undefined>({
       query: (title) => ({
         url: "",
         params: {

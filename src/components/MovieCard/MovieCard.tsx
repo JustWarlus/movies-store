@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, generatePath } from "react-router-dom";
+import { SkeletonMovieCard } from "components/SkeletonMovieCard";
+import { Link, useNavigate } from "react-router-dom";
 import { PAGE } from "router";
 import { useGetMovieByIdQuery } from "services";
 import { IMoviePosterAPI } from "types/types";
@@ -13,11 +13,17 @@ interface IProps {
 }
 
 export const MovieCard = ({ movie }: IProps) => {
-  const { data, isSuccess } = useGetMovieByIdQuery(movie.imdbID);
+  const navigate = useNavigate();
+  const { data, isSuccess, isLoading } = useGetMovieByIdQuery(movie.imdbID);
+
+  if (isLoading) {
+    return <SkeletonMovieCard />;
+  }
+
   if (isSuccess) {
     const transformMovie = TransformMoviePosters(data);
     return (
-      <Link to={generatePath(`${PAGE.MOVIE}`, { imbd: transformMovie.imdbID })}>
+      <Link to={`/movie/${transformMovie.imdbID}`}>
         <StyledMovieCard>
           <Poster poster={transformMovie.poster}>
             <BadgeRating rating={transformMovie.imdbRating} />
@@ -32,4 +38,5 @@ export const MovieCard = ({ movie }: IProps) => {
       </Link>
     );
   }
+  return <></>;
 };

@@ -23,6 +23,7 @@ export const router = createBrowserRouter(
         <Route path={PAGE.FAVORITES} element={<FavoritesPage />} />
         <Route path={PAGE.CHANGE_PASSWORD} element={<ChangePasswordPage />} />
         <Route path={PAGE.MOVIE} element={<MoviePage />} />
+
         <Route path={PAGE.PROFILE} element={<ProfilePage />} />
         <Route path={PAGE.SEARH} element={<SearchPage />} />
         <Route path={PAGE.SETTINGS} element={<SettingsPage />} />
