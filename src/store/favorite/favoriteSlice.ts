@@ -1,17 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IMoviePosterAPI, LocalStorageKey } from "types/types";
+import { IMoviePosterAPI, LocalStorageKey, IMovieInfoAPI } from "types/types";
 
 const initFavorite = () => {
-  if (localStorage.getItem(LocalStorageKey.FAVORITES)) {
-    return JSON.parse(localStorage.getItem(LocalStorageKey.FAVORITES) || "");
-  } else {
+  if (!localStorage.getItem(LocalStorageKey.FAVORITES)) {
     localStorage.setItem(LocalStorageKey.FAVORITES, JSON.stringify([]));
-    return JSON.parse(localStorage.getItem(LocalStorageKey.FAVORITES) || "");
   }
+  return JSON.parse(localStorage.getItem(LocalStorageKey.FAVORITES) as string);
 };
 
 interface IFavoriteState {
-  favoriteMovies: IMoviePosterAPI[];
+  favoriteMovies: (IMoviePosterAPI | IMovieInfoAPI)[];
 }
 
 const initialState: IFavoriteState = {

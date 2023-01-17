@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Color, Typography } from "ui";
 
+interface IButtom {
+  isFavorite?: boolean;
+}
+
 const Movie = styled.main`
   display: flex;
   gap: 42px;
@@ -77,6 +81,37 @@ const TableRowValue = styled.td`
   color: ${Color.WHITE};
 `;
 
+const Buttom = styled.div<IButtom>`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  box-sizing: border-box;
+  background: ${Color.GRAPHITE};
+
+  svg {
+    path {
+      fill: ${({ isFavorite }) => (isFavorite ? Color.PRIMARY_MAIN : Color.WHITE)};
+    }
+  }
+
+  &:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  &:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+`;
+
+const SubPanel = styled.div`
+  max-width: 237px;
+  display: flex;
+  gap: 2px;
+  margin-top: 32px;
+  justify-content: space-between;
+`;
+
 export {
   Movie,
   Poster,
@@ -92,4 +127,6 @@ export {
   TableRow,
   TableRowName,
   TableRowValue,
+  SubPanel,
+  Buttom,
 };

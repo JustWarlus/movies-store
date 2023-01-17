@@ -11,6 +11,7 @@ import { ReactComponent as ImbdIcon } from "./icons/imbd.svg";
 import { ReactComponent as NotFoundIcon } from "./icons/notFound.svg";
 import { ReactComponent as TrendIcon } from "./icons/trend.svg";
 import { ReactComponent as FavoriteIcon } from "./icons/favorite.svg";
+import { ReactComponent as ShareIcon } from "./icons/share.svg";
 import backroundSign from "./images/backroundSignPage.png";
 
 export {
@@ -28,4 +29,5 @@ export {
   NotFoundIcon,
   TrendIcon,
   FavoriteIcon,
+  ShareIcon,
 };
