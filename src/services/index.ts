@@ -1,3 +1,8 @@
-import { useGetMovieByIdQuery, useGetMovieByTitleQuery, movieApi } from "./moviesApi";
+import {
+  useGetMovieByIdQuery,
+  useGetMovieByTitleQuery,
+  movieApi,
+  useGetOneMovieByTitleQuery,
+} from "./moviesApi";
 
-export { useGetMovieByIdQuery, useGetMovieByTitleQuery, movieApi };
+export { useGetMovieByIdQuery, useGetMovieByTitleQuery, movieApi, useGetOneMovieByTitleQuery };

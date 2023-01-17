@@ -1,0 +1,17 @@
+export const trendsMovies: string[] = [
+  "Avatar: The Way of Water",
+  "Puss in Boots: The Last Wish",
+  "Black Panther: Wakanda Forever",
+  "House Party",
+  "The Whale",
+  "Whitney Houston: I Wanna Dance With Somebody",
+  "Top Gun: Maverick",
+  "Babylon",
+  "Terror on the Prairie",
+  "Spider-Man: No Way Home",
+  "Avengers: Endgame",
+  "THE MENU",
+  "KNIVES OUT",
+  "BULLET TRAIN",
+  "Green Book",
+];

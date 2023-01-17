@@ -51,3 +51,7 @@ export interface IDataMoviePosterApi {
   Search: IMoviePosterAPI[];
   totalResutlts: string;
 }
+
+export enum LocalStorageKey {
+  FAVORITES = "favorites",
+}

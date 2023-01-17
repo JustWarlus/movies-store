@@ -8,7 +8,7 @@ export const MoviePage = () => {
   const navigate = useNavigate();
   const { imbd } = useParams();
 
-  const { data, isSuccess, isLoading, isError } = useGetMovieByIdQuery(imbd);
+  const { data, isSuccess, isLoading } = useGetMovieByIdQuery(imbd);
 
   if (isLoading) {
     return <SkeletonMovieDetails />;

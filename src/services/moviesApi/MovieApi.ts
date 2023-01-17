@@ -26,7 +26,19 @@ export const movieApi = createApi({
         },
       }),
     }),
+
+    getOneMovieByTitle: build.query<IMovieInfoAPI, string | undefined>({
+      query: (title) => ({
+        url: "",
+        params: {
+          apikey: KEY_API,
+          t: title,
+          plot: "short",
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetMovieByIdQuery, useGetMovieByTitleQuery } = movieApi;
+export const { useGetMovieByIdQuery, useGetMovieByTitleQuery, useGetOneMovieByTitleQuery } =
+  movieApi;

@@ -9,6 +9,8 @@ import { ReactComponent as ArrowIcon } from "./icons/profileArrow.svg";
 import { ReactComponent as FilterIcon } from "./icons/filter.svg";
 import { ReactComponent as ImbdIcon } from "./icons/imbd.svg";
 import { ReactComponent as NotFoundIcon } from "./icons/notFound.svg";
+import { ReactComponent as TrendIcon } from "./icons/trend.svg";
+import { ReactComponent as FavoriteIcon } from "./icons/favorite.svg";
 import backroundSign from "./images/backroundSignPage.png";
 
 export {
@@ -24,4 +26,6 @@ export {
   backroundSign,
   ImbdIcon,
   NotFoundIcon,
+  TrendIcon,
+  FavoriteIcon,
 };

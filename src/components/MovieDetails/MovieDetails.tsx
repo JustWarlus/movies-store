@@ -49,7 +49,7 @@ export const MovieDetails = ({ movie }: IProps) => {
         </Categories>
         <Title>{movie.Title}</Title>
         <Badges>
-          <BadgeRating rating={movie.imdbRating} />
+          <BadgeRating movieTitle={movie.Title} rating={movie.imdbRating} />
           <BadgeItem>
             <ImbdIcon />
             {movie.imdbRating}

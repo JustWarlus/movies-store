@@ -9,6 +9,7 @@ import { SkeletonMovieDetails } from "./SkeletonMovieDetails";
 import { NotFound } from "./NotFound";
 import { Recomendation } from "./Recomendation";
 import { SkeletonMovieCard } from "./SkeletonMovieCard";
+import { FavoriteEmpty } from "./FavoritesEmpty";
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   NotFound,
   Recomendation,
   SkeletonMovieCard,
+  FavoriteEmpty,
 };

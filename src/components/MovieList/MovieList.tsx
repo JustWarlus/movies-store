@@ -1,10 +1,10 @@
 import React from "react";
-import { IMoviePosterAPI } from "types/types";
+import { IMoviePosterAPI, IMovieInfoAPI } from "types/types";
 import { MovieCard } from "../MovieCard";
 import { StyledMovieList } from "./style";
 
 interface IProps {
-  movies: IMoviePosterAPI[];
+  movies: IMoviePosterAPI[] | IMovieInfoAPI[];
 }
 
 export const MovieList = ({ movies }: IProps) => {

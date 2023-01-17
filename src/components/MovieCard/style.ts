@@ -5,10 +5,36 @@ interface IPoster {
   poster: string;
 }
 
+interface IFavorite {
+  isFavorite: boolean;
+}
+
+const BadgeFavorite = styled.div<IFavorite>`
+  display: ${({ isFavorite }) => (isFavorite ? "flex" : "none")};
+  height: fit-content;
+  align-items: center;
+  background-color: ${Color.GRAPHITE};
+  padding: 4px 10px;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  svg {
+    path {
+      fill: ${({ isFavorite }) => (isFavorite ? Color.PRIMARY_SUB : Color.WHITE)};
+    }
+  }
+`;
+
 const StyledMovieCard = styled.div`
   width: 266px;
+
+  &:hover ${BadgeFavorite} {
+    display: flex;
+  }
 `;
 const Poster = styled.div<IPoster>`
+  display: flex;
+  justify-content: space-between;
   min-width: 266px;
   min-height: 357px;
   border-radius: 20px;
@@ -37,4 +63,4 @@ const CategoryItem = styled.span`
   }
 `;
 
-export { StyledMovieCard, Poster, NameMovie, Categories, CategoryItem };
+export { StyledMovieCard, Poster, NameMovie, Categories, CategoryItem, BadgeFavorite };
