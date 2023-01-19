@@ -12,6 +12,7 @@ import { ReactComponent as NotFoundIcon } from "./icons/notFound.svg";
 import { ReactComponent as TrendIcon } from "./icons/trend.svg";
 import { ReactComponent as FavoriteIcon } from "./icons/favorite.svg";
 import { ReactComponent as ShareIcon } from "./icons/share.svg";
+import { ReactComponent as ArrowSliderIcon } from "./icons/arrow.svg";
 import backroundSign from "./images/backroundSignPage.png";
 
 export {
@@ -23,6 +24,7 @@ export {
   FavoritesIcon,
   ProfileDefaultIcon,
   ArrowIcon,
+  ArrowSliderIcon,
   FilterIcon,
   backroundSign,
   ImbdIcon,

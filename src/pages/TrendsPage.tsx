@@ -4,5 +4,5 @@ import { IMovieInfoAPI } from "types/types";
 
 export const TrendsPage = () => {
   const data = getTrendsMovies() as IMovieInfoAPI[];
-  return <MovieList movies={data} />;
+  return <MovieList movies={data} isLoading={false} />;
 };

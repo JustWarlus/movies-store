@@ -26,7 +26,7 @@ const Input = styled.input`
   }
 `;
 
-const Search = styled.div`
+const Search = styled.form`
   width: 100%;
   position: relative;
 

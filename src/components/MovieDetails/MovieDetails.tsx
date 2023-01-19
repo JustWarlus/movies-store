@@ -21,6 +21,7 @@ import {
   TableRowValue,
   SubPanel,
   Buttom,
+  TableBody,
 } from "./style";
 
 interface IProps {
@@ -80,16 +81,18 @@ export const MovieDetails = ({ movie }: IProps) => {
         </Badges>
         {movie.Plot !== "N/A" && <Description>{movie.Plot}</Description>}
         <Table>
-          {tableInfo.map((parametr) => {
-            if (movie[parametr] !== "N/A" && movie[parametr] !== undefined) {
-              return (
-                <TableRow>
-                  <TableRowName>{parametr}</TableRowName>
-                  <TableRowValue>{`${movie[parametr]}`}</TableRowValue>
-                </TableRow>
-              );
-            }
-          })}
+          <TableBody>
+            {tableInfo.map((parametr) => {
+              if (movie[parametr] !== "N/A" && movie[parametr] !== undefined) {
+                return (
+                  <TableRow key={parametr}>
+                    <TableRowName>{parametr}</TableRowName>
+                    <TableRowValue>{`${movie[parametr]}`}</TableRowValue>
+                  </TableRow>
+                );
+              }
+            })}
+          </TableBody>
         </Table>
         <Recomendation movie={movie} />
       </MovieInfo>

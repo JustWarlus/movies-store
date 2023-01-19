@@ -6,6 +6,6 @@ export const FavoritesPage = () => {
   if (!favoriteMovies.length) {
     return <FavoriteEmpty />;
   } else {
-    return <MovieList movies={favoriteMovies} />;
+    return <MovieList movies={favoriteMovies} isLoading={false} />;
   }
 };

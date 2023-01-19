@@ -6,11 +6,14 @@ interface IButtom {
 }
 
 const Movie = styled.main`
+  width: 100%;
   display: flex;
   gap: 42px;
   overflow: hidden;
 `;
-const MovieInfo = styled.div``;
+const MovieInfo = styled.div`
+  width: 100%;
+`;
 const MovieSidbar = styled.div`
   min-width: 266px;
 `;
@@ -111,7 +114,7 @@ const SubPanel = styled.div`
   margin-top: 32px;
   justify-content: space-between;
 `;
-
+const TableBody = styled.tbody``;
 export {
   Movie,
   Poster,
@@ -129,4 +132,5 @@ export {
   TableRowValue,
   SubPanel,
   Buttom,
+  TableBody,
 };
