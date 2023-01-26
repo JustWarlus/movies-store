@@ -4,7 +4,6 @@ import { FavoritesPage } from "./FavoritesPage";
 import { LoginPage } from "./LoginPage";
 import { MoviePage } from "./MoviePage";
 import { NotFoundPage } from "./NotFoundPage";
-import { ProfilePage } from "./ProfilePage";
 import { RegistrationPage } from "./RegistrationPage";
 import { SearchPage } from "./SearchPage";
 import { SettingsPage } from "./SettingsPage";
@@ -17,7 +16,6 @@ export {
   LoginPage,
   MoviePage,
   NotFoundPage,
-  ProfilePage,
   RegistrationPage,
   SearchPage,
   SettingsPage,

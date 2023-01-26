@@ -13,51 +13,42 @@ import {
   LinkSignUp,
   ErrorMessage,
 } from "./style";
+import { Validation, validationForm } from "utilits";
+import { signUpUser } from "store/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
-interface IFormValues {
+type Inputs = {
   name: string;
   email: string;
   password: string;
   confirmPassword: string;
-}
+};
 
 export const FormRegistration = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     getValues,
     formState: { errors, isValid },
-  } = useForm<IFormValues>({ mode: "onChange" });
+  } = useForm<Inputs>({ mode: "onChange" });
 
-  const onSubmit: SubmitHandler<IFormValues> = (newUser) => {
-    console.log(newUser);
+  const handleSignUp: SubmitHandler<Inputs> = ({ email, password }) => {
+    dispatch(signUpUser({ email, password }));
+    navigate(PAGE.HOME);
   };
 
   return (
-    <StyledFrom onSubmit={handleSubmit(onSubmit)}>
+    <StyledFrom onSubmit={handleSubmit(handleSignUp)}>
       <TitleForm>Sign Up</TitleForm>
       <Label>
         <LabelName>Name</LabelName>
         <Input
           type="name"
           placeholder="Your name"
-          {...register("name", {
-            required: "Login is empty",
-            pattern: {
-              value: /^[a-zA-ZА-ЯЁа-яё\s]*$/,
-              message: "Incorrect login",
-            },
-            minLength: {
-              value: 5,
-              message: "Minimum length is 5 characters",
-            },
-            maxLength: {
-              value: 25,
-              message: "Maximum length is 25 characters",
-            },
-          })}
+          {...register("name", validationForm(Validation.NAME))}
         />
         {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
       </Label>
@@ -67,14 +58,7 @@ export const FormRegistration = () => {
         <Input
           placeholder="Your email"
           type="email"
-          {...register("email", {
-            required: "Email is empty",
-            pattern: {
-              value:
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: "Incorrect email",
-            },
-          })}
+          {...register("email", validationForm(Validation.EMAIL))}
         />
         {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
       </Label>
@@ -83,17 +67,7 @@ export const FormRegistration = () => {
         <Input
           placeholder="Your password"
           type="password"
-          {...register("password", {
-            required: "Password is empty",
-            pattern: {
-              value: /(?=.*[0-9])(?=.*[a-zA-Z]).{8,30}/,
-              message: "The password must consist of Latin letters and Arabic numerals",
-            },
-            minLength: {
-              value: 8,
-              message: "Minimum length is 8 characters",
-            },
-          })}
+          {...register("password", validationForm(Validation.PASSWORD))}
         />
         {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
       </Label>
@@ -103,11 +77,7 @@ export const FormRegistration = () => {
           placeholder="Confirm password"
           type="password"
           {...register("confirmPassword", {
-            required: "Password is empty",
-            minLength: {
-              value: 8,
-              message: "Minimum length is 8 characters",
-            },
+            ...validationForm(Validation.CONFIRM_PASSWORD),
             validate: (value) => {
               const { password } = getValues();
               return password === value || "Password doesn't match";
@@ -121,7 +91,7 @@ export const FormRegistration = () => {
       </Button>
       <ChangeForm>
         <SubText>Already have an account?</SubText>
-        <LinkSignUp to={PAGE.AUTHORIZATION}>Sign In</LinkSignUp>
+        <LinkSignUp to={"login"}>Sign In</LinkSignUp>
       </ChangeForm>
     </StyledFrom>
   );

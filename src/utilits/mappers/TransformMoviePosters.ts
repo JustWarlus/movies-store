@@ -1,7 +1,6 @@
-import { movieApi, useGetMovieByIdQuery } from "services";
 import { IMovieInfoAPI, IMoviePoster } from "types/types";
 
-export const TransformMoviePosters = (movie: IMovieInfoAPI): IMoviePoster => {
+export const transformMoviePosters = (movie: IMovieInfoAPI): IMoviePoster => {
   return {
     poster: movie.Poster,
     title: movie.Title,

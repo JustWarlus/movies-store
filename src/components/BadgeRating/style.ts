@@ -7,6 +7,7 @@ interface IBadge {
 }
 
 const Badge = styled.div<IBadge>`
+  margin-right: auto;
   height: fit-content;
   display: flex;
   align-items: center;

@@ -1,5 +1,5 @@
-import React from "react";
+import { FormResetPassword } from "components";
 
 export const ChangePasswordPage = () => {
-  return <div>ChangePasswordPage</div>;
+  return <FormResetPassword />;
 };

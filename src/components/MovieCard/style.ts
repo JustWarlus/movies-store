@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Color, Indents, Typography } from "../../ui";
 
 interface IPoster {
-  poster: string;
+  $poster: string;
 }
 
 interface IFavorite {
@@ -11,6 +11,7 @@ interface IFavorite {
 
 const BadgeFavorite = styled.div<IFavorite>`
   display: ${({ isFavorite }) => (isFavorite ? "flex" : "none")};
+
   height: fit-content;
   align-items: center;
   background-color: ${Color.GRAPHITE};
@@ -34,14 +35,15 @@ const StyledMovieCard = styled.div`
 `;
 const Poster = styled.div<IPoster>`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+
   min-width: 266px;
   min-height: 357px;
   border-radius: 20px;
   padding: 20px;
   box-sizing: border-box;
   ${Indents.LEVEL_6}
-  background-image: url(${({ poster }) => poster});
+  background-image: url(${({ $poster }) => $poster});
   background-size: cover;
 `;
 const NameMovie = styled.span`

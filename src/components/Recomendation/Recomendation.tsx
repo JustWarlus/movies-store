@@ -10,8 +10,10 @@ interface IProps {
 }
 
 export const Recomendation = ({ movie }: IProps) => {
-  const { data, isSuccess } = movieApi.useGetMovieByTitleQuery(movie.Title.split(" ").at(-1));
-  const [isLeftScroll, setIsLeftScroll] = useState(true);
+  const { data, isSuccess } = movieApi.useGetMovieByTitleQuery({
+    title: movie.Title.split(" ").at(-1) as string,
+  });
+  const [isLeftScroll, setIsLeftScroll] = useState(false);
   const [isRightScroll, setIsRightScroll] = useState(true);
 
   const carousel = useRef<HTMLDivElement>(null);

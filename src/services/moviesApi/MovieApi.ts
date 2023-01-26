@@ -1,11 +1,17 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { IMovieInfoAPI, IDataMoviePosterApi } from "types/types";
 
-const KEY_API = "2fa1535f";
+const KEY_API = process.env.REACT_APP_KEY_API;
+
+interface IQuery {
+  title: string;
+  page?: number;
+}
 
 export const movieApi = createApi({
   reducerPath: "movieAPI",
   baseQuery: fetchBaseQuery({ baseUrl: "https://www.omdbapi.com/" }),
+
   endpoints: (build) => ({
     getMovieById: build.query<IMovieInfoAPI, string | undefined>({
       query: (id) => ({
@@ -17,12 +23,13 @@ export const movieApi = createApi({
       }),
     }),
 
-    getMovieByTitle: build.query<IDataMoviePosterApi, string | undefined>({
-      query: (title) => ({
+    getMovieByTitle: build.query<IDataMoviePosterApi, IQuery>({
+      query: ({ title = "", page = 1 }) => ({
         url: "",
         params: {
           apikey: KEY_API,
           s: title,
+          page: page,
         },
       }),
     }),

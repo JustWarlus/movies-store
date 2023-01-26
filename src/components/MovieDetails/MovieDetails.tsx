@@ -1,4 +1,4 @@
-import { ImbdIcon, ShareIcon, TrendIcon } from "assets";
+import { FavoriteIcon, ImbdIcon, ShareIcon } from "assets";
 import { BadgeRating } from "components/BadgeRating";
 import { Recomendation } from "components/Recomendation";
 import { IMovieInfoAPI, TableInfoKey } from "types/types";
@@ -57,7 +57,7 @@ export const MovieDetails = ({ movie }: IProps) => {
         <Poster src={movie.Poster} alt={movie.Title} />
         <SubPanel>
           <Buttom isFavorite={isFavorite} onClick={() => handleAddFavorite()}>
-            <TrendIcon />
+            <FavoriteIcon />
           </Buttom>
           <Buttom>
             <ShareIcon />

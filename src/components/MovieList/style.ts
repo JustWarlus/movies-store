@@ -7,4 +7,8 @@ const StyledMovieList = styled.div`
   gap: 40px;
 `;
 
-export { StyledMovieList };
+const ButtonConainer = styled.div`
+  grid-area: 3 / 3 / 3 / 6;
+`;
+
+export { StyledMovieList, ButtonConainer };

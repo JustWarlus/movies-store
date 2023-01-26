@@ -1,3 +1,3 @@
-import { TransformMoviePosters } from "./TransformMoviePosters";
+import { transformMoviePosters } from "./transformMoviePosters";
 
-export { TransformMoviePosters };
+export { transformMoviePosters };

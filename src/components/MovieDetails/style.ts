@@ -44,6 +44,7 @@ const CategoryItem = styled.span`
 const Badges = styled.div`
   margin-top: 26px;
   display: flex;
+  width: fit-content;
   gap: 14px;
 `;
 const BadgeItem = styled.div`

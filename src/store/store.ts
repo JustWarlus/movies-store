@@ -3,13 +3,14 @@ import { movieApi } from "services";
 
 import favoriteReducer from "./favorite/favoriteSlice";
 import searchReducer from "./search/searchSlice";
+import accountReducer from "./auth/authSlice";
 
 export const store = configureStore({
   reducer: {
-    // user: userReduser,
     [movieApi.reducerPath]: movieApi.reducer,
     favorites: favoriteReducer,
     search: searchReducer,
+    account: accountReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(movieApi.middleware),
 });

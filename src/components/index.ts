@@ -10,10 +10,14 @@ import { NotFound } from "./NotFound";
 import { Recomendation } from "./Recomendation";
 import { SkeletonMovieCard } from "./SkeletonMovieCard";
 import { FavoriteEmpty } from "./FavoritesEmpty";
+import { ButtonMore } from "./ButtonMore";
+import { FormResetPassword } from "./FormResetPassword";
+import { RequareAuth } from "./RequareAuth";
 
 export {
   Header,
   SearchInput,
+  RequareAuth,
   Menu,
   MovieList,
   FormLogin,
@@ -23,5 +27,7 @@ export {
   NotFound,
   Recomendation,
   SkeletonMovieCard,
+  FormResetPassword,
+  ButtonMore,
   FavoriteEmpty,
 };

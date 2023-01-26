@@ -5,9 +5,8 @@ export enum PAGE {
   FAVORITES = "favorites",
   TRENDS = "trends",
   SETTINGS = "settings",
-  PROFILE = "profile",
   AUTHORIZATION = "login",
   REGISTRATION = "registration",
-  CHANGE_PASSWORD = "profile/change-password",
+  CHANGE_PASSWORD = "change-password",
   NOT_FOUND = "*",
 }
