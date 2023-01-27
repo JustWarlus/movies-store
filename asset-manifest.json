@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/movies-store/static/js/main.018c2d58.js",
+    "static/media/backroundSignPage.png": "/movies-store/static/media/backroundSignPage.9bc11f531421e8117315.png",
+    "static/media/notFound.svg": "/movies-store/static/media/notFound.d675174e548f560a43b95ccb24b4e1c5.svg",
+    "static/media/logo-pixema.svg": "/movies-store/static/media/logo-pixema.02b3ff519726ca3fef8d64b51e2360a2.svg",
+    "static/media/settings.svg": "/movies-store/static/media/settings.27d5ff84aac9994696fa1bbb14b9994d.svg",
+    "static/media/imbd.svg": "/movies-store/static/media/imbd.58444fd8d2f8f69876ca64b6261dde9a.svg",
+    "static/media/trend.svg": "/movies-store/static/media/trend.2a6c9b22c97d3d41112438ce8221455c.svg",
+    "static/media/trends.svg": "/movies-store/static/media/trends.25f36342bf1d0bc2759cefda1b9bfbd9.svg",
+    "static/media/home.svg": "/movies-store/static/media/home.177dde88b13668bfb83779d76d35d8b3.svg",
+    "static/media/profileDefault.svg": "/movies-store/static/media/profileDefault.bae5ea99771dfc66e25ea32d4794d571.svg",
+    "static/media/favorite.svg": "/movies-store/static/media/favorite.df771a8d049afadd907dc093dcb61007.svg",
+    "static/media/favorites.svg": "/movies-store/static/media/favorites.80bb06f7d0592e2f0d1aff0847b1f1ab.svg",
+    "static/media/share.svg": "/movies-store/static/media/share.f19431bc8a2425171ce98e3ccbe44762.svg",
+    "index.html": "/movies-store/index.html",
+    "static/media/arrow.svg": "/movies-store/static/media/arrow.c9059137ab3d20e1ce3c199e3440f2e7.svg",
+    "static/media/filter.svg": "/movies-store/static/media/filter.bf5cb80deddb4125c2cf016a5a46143f.svg",
+    "static/media/searchMenu.svg": "/movies-store/static/media/searchMenu.bf5cb80deddb4125c2cf016a5a46143f.svg",
+    "static/media/profileArrow.svg": "/movies-store/static/media/profileArrow.cf34074ce06615563bbe6a8631cc0bf8.svg",
+    "main.018c2d58.js.map": "/movies-store/static/js/main.018c2d58.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.018c2d58.js"
+  ]
+}
