@@ -1,5 +1,6 @@
+/* eslint-disable indent */
 import styled from "styled-components";
-import { Color, Typography } from "../../ui";
+import { Color, Typography } from "ui";
 
 interface IBadge {
   rating: number;

@@ -1,6 +1,6 @@
 import { MovieList } from "components";
-import { getTrendsMovies } from "helpers/getTrendsMovies";
-import { IMovieInfoAPI } from "types/types";
+import { getTrendsMovies } from "helpers";
+import { IMovieInfoAPI } from "types";
 
 export const TrendsPage = () => {
   const data = getTrendsMovies() as IMovieInfoAPI[];

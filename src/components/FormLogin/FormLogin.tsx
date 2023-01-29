@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { PAGE } from "../../router";
+import { PAGE } from "router";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "store/hooks/hooks";
+import { useAppDispatch } from "store";
 import {
   StyledFrom,
   TitleForm,
@@ -16,7 +16,7 @@ import {
   ErrorMessage,
 } from "./style";
 import { Validation, validationForm } from "utilits";
-import { signInUser } from "store/auth/authSlice";
+import { signInUser } from "store";
 interface IFormValues {
   email: string;
   password: string;
@@ -57,13 +57,13 @@ export const FormLogin = () => {
         />
         {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
       </Label>
-      <ForgetPassword to={PAGE.CHANGE_PASSWORD}>Forgot password?</ForgetPassword>
+      <ForgetPassword to={PAGE.HOME + PAGE.CHANGE_PASSWORD}>Forgot password?</ForgetPassword>
       <Button type="submit" disabled={!isValid}>
         Sign in
       </Button>
       <ChangeForm>
         <SubText>Don’t have an account?</SubText>
-        <LinkSignUp to={"registration"}>Sign Up</LinkSignUp>
+        <LinkSignUp to={PAGE.HOME + PAGE.REGISTRATION}>Sign Up</LinkSignUp>
       </ChangeForm>
     </StyledFrom>
   );

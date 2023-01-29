@@ -1,16 +1,19 @@
 import React from "react";
-import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "../../assets";
-import { PAGE } from "../../router";
+import { FavoritesIcon, HomeIcon, ProfileMenuIcon, SettingsIcon, TrendsIcon } from "assets";
+import { PAGE } from "router";
 import { StyledMenu, Navigation, Copirate, LinkText } from "./style";
-import { CustomNavLink } from "components/CustomNavLink/CustomNavLink";
+import { CustomNavLink } from "components";
+import { useWindowSize } from "hooks";
 
 interface IProps {
   handleClose: () => void;
+  isMenuOpen: boolean;
 }
 
-export const Menu = ({ handleClose }: IProps) => {
+export const Menu = ({ handleClose, isMenuOpen }: IProps) => {
+  const { width = 0 } = useWindowSize();
   return (
-    <StyledMenu>
+    <StyledMenu $isMenuOpen={isMenuOpen}>
       <Navigation>
         <CustomNavLink onClick={handleClose} to={PAGE.HOME}>
           <HomeIcon />
@@ -28,6 +31,12 @@ export const Menu = ({ handleClose }: IProps) => {
           <SettingsIcon />
           <LinkText>Settings</LinkText>
         </CustomNavLink>
+        {width < 900 && (
+          <CustomNavLink onClick={handleClose} to={PAGE.AUTHORIZATION}>
+            <ProfileMenuIcon />
+            <LinkText>Profile</LinkText>
+          </CustomNavLink>
+        )}
       </Navigation>
       <Copirate>© All Rights Reserved</Copirate>
     </StyledMenu>

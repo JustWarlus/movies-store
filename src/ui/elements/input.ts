@@ -10,6 +10,7 @@ const input = css`
   outline: none;
   border-radius: 10px;
   cursor: pointer;
+  color: ${Color.WHITE};
 
   &::placeholder {
     color: ${Color.SECONDARY};

@@ -1,3 +1,5 @@
 import { transformMoviePosters } from "./transformMoviePosters";
+import { transformGenre } from "./transformGenres";
+import { transformFilterApi } from "./transormFilterApi";
 
-export { transformMoviePosters };
+export { transformMoviePosters, transformGenre, transformFilterApi };

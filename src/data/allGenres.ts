@@ -1,0 +1,26 @@
+import { IGenres } from "./types";
+
+export const allGenres: IGenres = {
+  boevik: "Action",
+  fentezi: "Fantasy",
+  fantastika: "Sci-fi",
+  triller: "Triller",
+  voennyj: "War",
+  detektiv: "Detective",
+  komediya: "Comedy",
+  drama: "Drama",
+  uzhasy: "Horror",
+  kriminal: "Crime",
+  melodrama: "Romance",
+  vestern: "Westerns",
+  multfilm: "Cartoon",
+  dokumentalnyj: "Documentary",
+  igra: "Game",
+  istoriya: "Historical",
+  korotkometrazhka: "Short film",
+  muzyka: "Music",
+  myuzikl: "Musical",
+  novosti: "News",
+  priklyucheniya: "Adventure",
+  sport: "Sport",
+};

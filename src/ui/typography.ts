@@ -2,7 +2,7 @@ import { css } from "styled-components";
 import { Media } from "./mediaBreackPoints";
 
 const H1 = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
@@ -19,7 +19,7 @@ const H1 = css`
 `;
 
 const H2 = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -36,7 +36,7 @@ const H2 = css`
 `;
 
 const H3 = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -53,7 +53,7 @@ const H3 = css`
 `;
 
 const SUBLINE_PRIMARY = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -66,7 +66,7 @@ const SUBLINE_PRIMARY = css`
 `;
 
 const SUBLINE_SUB_PRIMARY = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -74,7 +74,7 @@ const SUBLINE_SUB_PRIMARY = css`
 `;
 
 const SUBLINE_BUTTON = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -82,7 +82,7 @@ const SUBLINE_BUTTON = css`
 `;
 
 const BODYTEXT = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -90,7 +90,7 @@ const BODYTEXT = css`
 `;
 
 const SUBLINE_SUB_BUTTON = css`
-  font-family: "Exo 2";
+  font-family: "Exo 2", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

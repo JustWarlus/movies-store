@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-import { IMovieInfoAPI, IDataMoviePosterApi } from "types/types";
+import { IMovieInfoAPI, IDataMoviePosterApi } from "types";
 
 const KEY_API = process.env.REACT_APP_KEY_API;
 

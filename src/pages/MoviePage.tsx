@@ -8,16 +8,15 @@ export const MoviePage = () => {
   const navigate = useNavigate();
   const { imbd } = useParams();
 
-  const { data, isSuccess, isLoading } = useGetMovieByIdQuery(imbd);
+  const { data, isLoading } = useGetMovieByIdQuery(imbd);
 
   if (isLoading) {
     return <SkeletonMovieDetails />;
   }
-
-  if (isSuccess) {
-    return <MovieDetails movie={data} />;
-  } else {
+  if (!data) {
     navigate(`${PAGE.NOT_FOUND}`);
+    return <div>Not Found</div>;
   }
-  return <></>;
+
+  return <MovieDetails movie={data} />;
 };

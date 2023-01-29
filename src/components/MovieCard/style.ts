@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color, Indents, Typography } from "../../ui";
+import { Color, Indents, Typography } from "ui";
 
 interface IPoster {
   $poster: string;

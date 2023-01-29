@@ -10,6 +10,10 @@ const Template = styled.div`
   box-sizing: border-box;
   background: url(backroundSign);
   color: white;
+
+  @media (max-width: 480px) {
+    padding: 48px 16px;
+  }
 `;
 
 const StyledLogo = styled(Link)``;
@@ -19,6 +23,10 @@ const Copyrigth = styled.div`
 `;
 const StyledOutlet = styled.div`
   margin: 0 auto;
+
+  @media (max-width: 700px) {
+    margin: 0;
+  }
 `;
 
 export { Template, StyledLogo, Copyrigth, StyledOutlet };

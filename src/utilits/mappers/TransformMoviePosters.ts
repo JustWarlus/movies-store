@@ -1,4 +1,4 @@
-import { IMovieInfoAPI, IMoviePoster } from "types/types";
+import { IMovieInfoAPI, IMoviePoster } from "types";
 
 export const transformMoviePosters = (movie: IMovieInfoAPI): IMoviePoster => {
   return {

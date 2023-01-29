@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { PAGE } from "../../router";
-import { useAppDispatch } from "store/hooks/hooks";
+import { PAGE } from "router";
+import { useAppDispatch } from "store";
 import {
   StyledFrom,
   TitleForm,
@@ -14,11 +14,11 @@ import {
   ErrorMessage,
 } from "./style";
 import { Validation, validationForm } from "utilits";
-import { signUpUser } from "store/auth/authSlice";
+import { signUpUser } from "store";
 import { useNavigate } from "react-router-dom";
 
 type Inputs = {
-  name: string;
+  userName: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -33,10 +33,10 @@ export const FormRegistration = () => {
     handleSubmit,
     getValues,
     formState: { errors, isValid },
-  } = useForm<Inputs>({ mode: "onChange" });
+  } = useForm<Inputs>({ mode: "onSubmit" });
 
-  const handleSignUp: SubmitHandler<Inputs> = ({ email, password }) => {
-    dispatch(signUpUser({ email, password }));
+  const handleSignUp: SubmitHandler<Inputs> = ({ userName, email, password }) => {
+    dispatch(signUpUser({ userName, email, password }));
     navigate(PAGE.HOME);
   };
 
@@ -48,9 +48,9 @@ export const FormRegistration = () => {
         <Input
           type="name"
           placeholder="Your name"
-          {...register("name", validationForm(Validation.NAME))}
+          {...register("userName", validationForm(Validation.NAME))}
         />
-        {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
+        {errors.userName && <ErrorMessage>{errors.userName.message}</ErrorMessage>}
       </Label>
 
       <Label>
@@ -91,7 +91,7 @@ export const FormRegistration = () => {
       </Button>
       <ChangeForm>
         <SubText>Already have an account?</SubText>
-        <LinkSignUp to={"login"}>Sign In</LinkSignUp>
+        <LinkSignUp to={PAGE.HOME + PAGE.AUTHORIZATION}>Sign In</LinkSignUp>
       </ChangeForm>
     </StyledFrom>
   );

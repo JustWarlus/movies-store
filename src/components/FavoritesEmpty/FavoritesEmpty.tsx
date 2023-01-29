@@ -1,4 +1,3 @@
-import React from "react";
 import { StyledFavoriteEmpty } from "./style";
 import { NotFoundIcon } from "assets";
 

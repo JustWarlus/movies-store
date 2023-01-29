@@ -5,4 +5,12 @@ import {
   useGetOneMovieByTitleQuery,
 } from "./moviesApi";
 
-export { useGetMovieByIdQuery, useGetMovieByTitleQuery, movieApi, useGetOneMovieByTitleQuery };
+import { useGetFilterQuery } from "./filtersApi";
+
+export {
+  useGetMovieByIdQuery,
+  useGetMovieByTitleQuery,
+  movieApi,
+  useGetOneMovieByTitleQuery,
+  useGetFilterQuery,
+};

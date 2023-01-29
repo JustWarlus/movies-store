@@ -1,12 +1,15 @@
 import { useDebounce, useInput } from "hooks";
 import { useNavigate } from "react-router-dom";
 import { PAGE } from "router";
-import { FilterIcon } from "../../assets";
+import { FilterIcon } from "assets";
 import { Input, Search } from "./style";
-import { useAppDispatch } from "store/hooks/hooks";
-import { changeSearchValue } from "store/search/searchSlice";
+import { useAppDispatch, changeSearchValue } from "store";
 
-export const SearchInput = () => {
+interface IProps {
+  toggleFilters: () => void;
+}
+
+export const SearchInput = ({ toggleFilters }: IProps) => {
   const search = useInput();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -24,7 +27,7 @@ export const SearchInput = () => {
       }}
     >
       <Input {...search} placeholder="Search..." />
-      <FilterIcon />
+      <FilterIcon onClick={toggleFilters} />
     </Search>
   );
 };

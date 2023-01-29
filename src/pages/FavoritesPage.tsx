@@ -1,5 +1,5 @@
 import { FavoriteEmpty, MovieList } from "components";
-import { useAppSelector } from "store/hooks/hooks";
+import { useAppSelector } from "store";
 
 export const FavoritesPage = () => {
   const { favoriteMovies } = useAppSelector((state) => state.favorites);

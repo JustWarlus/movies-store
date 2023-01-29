@@ -1,9 +1,9 @@
 import { FavoriteIcon, ImbdIcon, ShareIcon } from "assets";
-import { BadgeRating } from "components/BadgeRating";
-import { Recomendation } from "components/Recomendation";
-import { IMovieInfoAPI, TableInfoKey } from "types/types";
-import { toggleFavorite } from "store/favorite/favoriteSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
+import { BadgeRating } from "components";
+import { Recomendation } from "components";
+import { IMovieInfoAPI, TableInfoKey } from "types";
+import { toggleFavorite } from "store";
+import { useAppDispatch, useAppSelector } from "store";
 import {
   Movie,
   MovieInfo,
@@ -83,14 +83,15 @@ export const MovieDetails = ({ movie }: IProps) => {
         <Table>
           <TableBody>
             {tableInfo.map((parametr) => {
-              if (movie[parametr] !== "N/A" && movie[parametr] !== undefined) {
-                return (
+              return (
+                movie[parametr] !== "N/A" &&
+                movie[parametr] !== undefined && (
                   <TableRow key={parametr}>
                     <TableRowName>{parametr}</TableRowName>
                     <TableRowValue>{`${movie[parametr]}`}</TableRowValue>
                   </TableRow>
-                );
-              }
+                )
+              );
             })}
           </TableBody>
         </Table>

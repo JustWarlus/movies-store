@@ -4,6 +4,7 @@ export enum PAGE {
   MOVIE = "movie/:imbd",
   FAVORITES = "favorites",
   TRENDS = "trends",
+  FILTERS = "filters",
   SETTINGS = "settings",
   AUTHORIZATION = "login",
   REGISTRATION = "registration",

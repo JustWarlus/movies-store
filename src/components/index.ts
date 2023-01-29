@@ -13,11 +13,24 @@ import { FavoriteEmpty } from "./FavoritesEmpty";
 import { ButtonMore } from "./ButtonMore";
 import { FormResetPassword } from "./FormResetPassword";
 import { RequareAuth } from "./RequareAuth";
+import { Settings } from "./Settings";
+import { Filters } from "./Filters";
+import { BurgerMenu } from "./BurgerMenu";
+import { Profile } from "./Profile";
+import { CustomNavLink } from "./CustomNavLink";
+import { BadgeRating } from "./BadgeRating";
+import { MovieCard } from "./MovieCard";
 
 export {
   Header,
   SearchInput,
   RequareAuth,
+  MovieCard,
+  CustomNavLink,
+  BurgerMenu,
+  Filters,
+  BadgeRating,
+  Profile,
   Menu,
   MovieList,
   FormLogin,
@@ -28,6 +41,7 @@ export {
   Recomendation,
   SkeletonMovieCard,
   FormResetPassword,
+  Settings,
   ButtonMore,
   FavoriteEmpty,
 };

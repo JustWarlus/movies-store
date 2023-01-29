@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Color, Typography } from "../../ui";
+import { Color, Typography } from "ui";
 
 const Input = styled.input`
   width: 100%;

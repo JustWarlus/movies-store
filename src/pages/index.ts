@@ -8,10 +8,12 @@ import { RegistrationPage } from "./RegistrationPage";
 import { SearchPage } from "./SearchPage";
 import { SettingsPage } from "./SettingsPage";
 import { TrendsPage } from "./TrendsPage";
+import { SearchFilterPage } from "./SearchFilterPage";
 
 export {
   HomePage,
   ChangePasswordPage,
+  SearchFilterPage,
   FavoritesPage,
   LoginPage,
   MoviePage,

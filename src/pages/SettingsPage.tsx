@@ -1,5 +1,5 @@
-import React from "react";
+import { Settings } from "components";
 
 export const SettingsPage = () => {
-  return <div>SettingsPage</div>;
+  return <Settings />;
 };

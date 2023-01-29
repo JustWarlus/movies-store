@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IMoviePosterAPI, LocalStorageKey, IMovieInfoAPI } from "types/types";
+import { IMoviePosterAPI, LocalStorageKey, IMovieInfoAPI } from "types";
 
 const initFavorite = () => {
   if (!localStorage.getItem(LocalStorageKey.FAVORITES)) {

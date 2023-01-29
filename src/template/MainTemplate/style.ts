@@ -10,12 +10,20 @@ const StyledMainTemplate = styled.div`
 
   padding: 40px 61px 63px;
   box-sizing: border-box;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledLogo = styled(Link)`
   grid-area: 1 / 1 / 2 / 2;
   display: block;
   margin-top: 8px;
+
+  @media (max-width: 900px) {
+    visibility: hidden;
+  }
 `;
 
 const StyledOutlet = styled(Outlet)`

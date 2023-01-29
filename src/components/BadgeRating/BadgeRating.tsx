@@ -1,6 +1,5 @@
 import { TrendIcon } from "assets";
 import { trendsMovies } from "data";
-import React from "react";
 import { Badge } from "./style";
 
 interface IBadgeRating {

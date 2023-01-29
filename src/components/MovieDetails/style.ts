@@ -10,6 +10,10 @@ const Movie = styled.main`
   display: flex;
   gap: 42px;
   overflow: hidden;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 const MovieInfo = styled.div`
   width: 100%;

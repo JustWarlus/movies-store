@@ -11,6 +11,11 @@ export const form = css`
   border-radius: 10px;
   min-width: 574px;
 
+  @media (max-width: 700px) {
+    min-width: 0;
+    width: 100%;
+  }
+
   button {
     ${StyledButton.Primary}
     width: 100%;

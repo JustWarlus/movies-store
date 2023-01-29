@@ -1,4 +1,4 @@
-import { ReactComponent as LogoIcon } from "./logo-pixema.svg";
+import { ReactComponent as LogoIcon } from "./icons/logo-pixema.svg";
 import { ReactComponent as SearchMenuIcon } from "./icons/searchMenu.svg";
 import { ReactComponent as HomeIcon } from "./icons/home.svg";
 import { ReactComponent as TrendsIcon } from "./icons/trends.svg";
@@ -13,11 +13,17 @@ import { ReactComponent as TrendIcon } from "./icons/trend.svg";
 import { ReactComponent as FavoriteIcon } from "./icons/favorite.svg";
 import { ReactComponent as ShareIcon } from "./icons/share.svg";
 import { ReactComponent as ArrowSliderIcon } from "./icons/arrow.svg";
+import { ReactComponent as CrossIcon } from "./icons/cross.svg";
+import { ReactComponent as BurgerMenuIcon } from "./icons/burgerMenu.svg";
+import { ReactComponent as ProfileMenuIcon } from "./icons/profileIconMenu.svg";
 import backroundSign from "./images/backroundSignPage.png";
 
 export {
   LogoIcon,
   SearchMenuIcon,
+  BurgerMenuIcon,
+  CrossIcon,
+  ProfileMenuIcon,
   HomeIcon,
   TrendsIcon,
   SettingsIcon,

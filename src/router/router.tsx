@@ -8,11 +8,12 @@ import {
   MoviePage,
   NotFoundPage,
   RegistrationPage,
+  SearchFilterPage,
   SearchPage,
   SettingsPage,
   TrendsPage,
-} from "../pages";
-import { AuthorizationTemplate, MainTemplate } from "../template";
+} from "pages";
+import { AuthorizationTemplate, MainTemplate } from "template";
 import { PAGE } from "./pages";
 
 export const router = createBrowserRouter(
@@ -22,11 +23,12 @@ export const router = createBrowserRouter(
         <Route index element={<HomePage />} />
         <Route path={PAGE.MOVIE} element={<MoviePage />} />
         <Route path={PAGE.SEARH} element={<SearchPage />} />
+        <Route path={PAGE.FILTERS} element={<SearchFilterPage />} />
         <Route path={PAGE.NOT_FOUND} element={<NotFoundPage />} />
+        <Route path={PAGE.TRENDS} element={<TrendsPage />} />
 
         <Route element={<RequareAuth />}>
           <Route path={PAGE.SETTINGS} element={<SettingsPage />} />
-          <Route path={PAGE.TRENDS} element={<TrendsPage />} />
           <Route path={PAGE.FAVORITES} element={<FavoritesPage />} />
         </Route>
       </Route>

@@ -1,7 +1,7 @@
 import { ArrowSliderIcon } from "assets";
-import { MovieCard } from "components/MovieCard";
+import { MovieCard } from "components";
 import { movieApi } from "services";
-import { IMovieInfoAPI } from "types/types";
+import { IMovieInfoAPI } from "types";
 import { StyledRecomendation, Title, MovieList, Button, ControlPanel, Panel } from "./style";
 import { useRef, useState } from "react";
 
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 export const Recomendation = ({ movie }: IProps) => {
-  const { data, isSuccess } = movieApi.useGetMovieByTitleQuery({
+  const { data, isError } = movieApi.useGetMovieByTitleQuery({
     title: movie.Title.split(" ").at(-1) as string,
   });
   const [isLeftScroll, setIsLeftScroll] = useState(false);
@@ -42,28 +42,31 @@ export const Recomendation = ({ movie }: IProps) => {
     }
   };
 
-  if (isSuccess) {
-    return (
-      <StyledRecomendation>
-        <Panel>
-          <Title>Recomendation</Title>
-          <ControlPanel>
-            <Button onClick={handleLeftClick} disabled={!isLeftScroll}>
-              <ArrowSliderIcon />
-            </Button>
-            <Button onClick={handleRightClick} disabled={!isRightScroll}>
-              <ArrowSliderIcon />
-            </Button>
-          </ControlPanel>
-        </Panel>
-        <MovieList ref={carousel}>
-          {data.Search.map((movieItem) => {
-            if (movieItem.imdbID !== movie.imdbID)
-              return <MovieCard key={movieItem.imdbID} movie={movieItem} />;
-          })}
-        </MovieList>
-      </StyledRecomendation>
-    );
+  if (isError || !data) {
+    return <></>;
   }
-  return <></>;
+
+  return (
+    <StyledRecomendation>
+      <Panel>
+        <Title>Recomendation</Title>
+        <ControlPanel>
+          <Button onClick={handleLeftClick} disabled={!isLeftScroll}>
+            <ArrowSliderIcon />
+          </Button>
+          <Button onClick={handleRightClick} disabled={!isRightScroll}>
+            <ArrowSliderIcon />
+          </Button>
+        </ControlPanel>
+      </Panel>
+      <MovieList ref={carousel}>
+        {data.Search.map((movieItem) => {
+          if (movieItem.imdbID !== movie.imdbID) {
+            return <MovieCard key={movieItem.imdbID} movie={movieItem} />;
+          }
+          return <></>;
+        })}
+      </MovieList>
+    </StyledRecomendation>
+  );
 };

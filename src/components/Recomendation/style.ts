@@ -4,6 +4,18 @@ import { Color, Typography } from "ui";
 const StyledRecomendation = styled.div`
   margin-top: 56px;
   width: 79%;
+
+  @media (max-width: 1850px) {
+    width: 73%;
+  }
+
+  @media (max-width: 1480px) {
+    width: 64%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 const Title = styled.h2`
   ${Typography.H3}
@@ -27,6 +39,7 @@ const Button = styled.button`
   border: none;
   outline: none;
   background: none;
+  cursor: pointer;
   &:first-child {
     transform: rotate(180deg);
   }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ArrowIcon } from "../../assets";
-import { Color, Typography } from "../../ui";
+import { ArrowIcon } from "assets";
+import { Color, Typography } from "ui";
 
 interface IArrow {
   $isAuth?: boolean;

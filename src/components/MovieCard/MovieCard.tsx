@@ -1,12 +1,12 @@
 import { FavoriteIcon } from "assets";
-import { SkeletonMovieCard } from "components/SkeletonMovieCard";
+import { SkeletonMovieCard } from "components";
 import { Link } from "react-router-dom";
 import { useGetMovieByIdQuery } from "services";
-import { toggleFavorite } from "store/favorite/favoriteSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { IMoviePosterAPI, IMovieInfoAPI } from "types/types";
+import { toggleFavorite } from "store";
+import { useAppDispatch, useAppSelector } from "store";
+import { IMoviePosterAPI, IMovieInfoAPI } from "types";
 import { transformMoviePosters } from "utilits";
-import { BadgeRating } from "../BadgeRating";
+import { BadgeRating } from "components";
 import {
   StyledMovieCard,
   Poster,
@@ -17,7 +17,11 @@ import {
 } from "./style";
 
 interface IProps {
-  movie: IMoviePosterAPI;
+  movie: IMoviePosterAPI | IFilter;
+}
+
+interface IFilter {
+  imdbID: string;
 }
 
 export const MovieCard = ({ movie }: IProps) => {

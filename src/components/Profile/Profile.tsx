@@ -1,9 +1,9 @@
 import { getAvatarProfile, getNameProfile } from "helpers";
 import { Link } from "react-router-dom";
 import { PAGE } from "router";
-import { logOutUser } from "store/auth/authSlice";
-import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
-import { ProfileDefaultIcon } from "../../assets";
+import { logOutUser } from "store";
+import { useAppDispatch, useAppSelector } from "store";
+import { ProfileDefaultIcon } from "assets";
 import { StyledProfile, Name, Arrow, ProfileAvatar } from "./style";
 
 export const Profile = () => {
