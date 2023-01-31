@@ -54,4 +54,21 @@ export interface IDataMoviePosterApi {
 
 export enum LocalStorageKey {
   FAVORITES = "favorites",
+  AUTH = "isAuth",
+}
+
+export interface IFilterApi {
+  docs: IFilterApiDocs[];
+  limit: number;
+  page: number;
+  pages: number;
+  total: number;
+}
+
+interface IFilterApiDocs {
+  id: string;
+  externalId: IImbd;
+}
+interface IImbd {
+  imdb: string;
 }

@@ -19,6 +19,10 @@ const StyledMenu = styled.div<IMenu>`
     border-radius: 15px;
     box-sizing: border-box;
   }
+
+  @media (max-width: 985px) {
+    top: 145px;
+  }
 `;
 
 const Navigation = styled.nav`

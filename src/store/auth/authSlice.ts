@@ -7,7 +7,20 @@ import {
   updateEmail,
   updatePassword,
 } from "firebase/auth";
+import { LocalStorageKey } from "types";
 import { FirebaseErrorCode, getFBErrorMessage } from "utilits";
+
+interface IInitAuth {
+  isAuth: boolean;
+  userEmail: null | string;
+}
+
+const initAuth = (): IInitAuth => {
+  if (!localStorage.getItem(LocalStorageKey.AUTH)) {
+    localStorage.setItem(LocalStorageKey.AUTH, JSON.stringify({ isAuth: false, userEmail: null }));
+  }
+  return JSON.parse(localStorage.getItem(LocalStorageKey.AUTH) as string);
+};
 
 interface IAccount {
   id: null | string;
@@ -23,10 +36,10 @@ interface IAccount {
 const initialState: IAccount = {
   id: null,
   name: null,
-  email: null,
+  email: initAuth().userEmail,
   token: null,
   avatar: null,
-  isAuth: true,
+  isAuth: initAuth().isAuth,
   error: null,
   theme: "dark",
 };
@@ -40,6 +53,7 @@ export const signUpUser = createAsyncThunk<
     const auth = getAuth();
     const userCredential = createUserWithEmailAndPassword(auth, email, password);
     const userEmail = (await userCredential).user.email;
+    localStorage.setItem(LocalStorageKey.AUTH, JSON.stringify({ isAuth: true, userEmail: email }));
     return { userEmail, userName };
   } catch (error) {
     const firebaseError = error as { code: FirebaseErrorCode };
@@ -56,6 +70,7 @@ export const signInUser = createAsyncThunk<
     const auth = getAuth();
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const userEmail = userCredential.user.email;
+    localStorage.setItem(LocalStorageKey.AUTH, JSON.stringify({ isAuth: true, userEmail: email }));
     return { userEmail };
   } catch (error) {
     const firebaseError = error as { code: FirebaseErrorCode };
@@ -119,6 +134,10 @@ const accountSlice = createSlice({
 
     logOutUser: (state) => {
       state.isAuth = false;
+      localStorage.setItem(
+        LocalStorageKey.AUTH,
+        JSON.stringify({ isAuth: false, userEmail: null }),
+      );
     },
 
     getUserInfo: (state, { payload }) => {

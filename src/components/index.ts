@@ -20,11 +20,15 @@ import { Profile } from "./Profile";
 import { CustomNavLink } from "./CustomNavLink";
 import { BadgeRating } from "./BadgeRating";
 import { MovieCard } from "./MovieCard";
+import { Portal } from "./Portal";
+import { ProfileMenu } from "./ProfileMenu";
 
 export {
   Header,
   SearchInput,
   RequareAuth,
+  Portal,
+  ProfileMenu,
   MovieCard,
   CustomNavLink,
   BurgerMenu,

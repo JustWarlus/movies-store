@@ -5,13 +5,13 @@ import { PAGE } from "router";
 import { Profile } from "components";
 import { SearchInput } from "components";
 import { StyledHeader, StyledLogo } from "./style";
-
+import { memo } from "react";
 interface IProps {
   toggleFilters: () => void;
   toggleMenu: () => void;
 }
 
-export const Header = ({ toggleFilters, toggleMenu }: IProps) => {
+export const Header = memo(({ toggleFilters, toggleMenu }: IProps) => {
   const { width = 0 } = useWindowSize();
   return (
     <StyledHeader>
@@ -24,4 +24,4 @@ export const Header = ({ toggleFilters, toggleMenu }: IProps) => {
       {width > 900 ? <Profile /> : <BurgerMenu toggleMenu={toggleMenu} />}
     </StyledHeader>
   );
-};
+});

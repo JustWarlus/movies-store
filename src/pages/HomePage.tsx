@@ -10,6 +10,9 @@ export const HomePage = () => {
   const setNewPage = () => {
     setPage((page) => page + 1);
   };
+  const setPrevPage = () => {
+    if (page > 1) setPage((page) => page - 1);
+  };
 
   if (data) {
     return (
@@ -17,7 +20,8 @@ export const HomePage = () => {
         <MovieList movies={data.Search} isLoading={isLoading} />
 
         <ButtonConainer>
-          <ButtonMore onClick={setNewPage} />
+          {page > 1 && <ButtonMore onClick={setPrevPage} label="Prev" />}
+          <ButtonMore onClick={setNewPage} label="Next" />
         </ButtonConainer>
       </div>
     );

@@ -15,7 +15,7 @@ import {
   CategoryItem,
   BadgeFavorite,
 } from "./style";
-
+import { memo } from "react";
 interface IProps {
   movie: IMoviePosterAPI | IFilter;
 }
@@ -24,7 +24,7 @@ interface IFilter {
   imdbID: string;
 }
 
-export const MovieCard = ({ movie }: IProps) => {
+export const MovieCard = memo(({ movie }: IProps) => {
   const { data, isLoading, isError } = useGetMovieByIdQuery(movie.imdbID);
   const dispatch = useAppDispatch();
   const { favoriteMovies } = useAppSelector((state) => state.favorites);
@@ -45,10 +45,14 @@ export const MovieCard = ({ movie }: IProps) => {
 
   const transformMovie = transformMoviePosters(data as IMovieInfoAPI);
   const { poster, imdbID, imdbRating, title, genre } = transformMovie;
+  const posterBackround =
+    poster !== "N/A"
+      ? poster
+      : "https://pbs.twimg.com/profile_images/1257345412723245056/UtDbBzcJ_400x400.jpg";
   return (
     <Link to={`/movie/${imdbID}`}>
       <StyledMovieCard>
-        <Poster $poster={poster}>
+        <Poster $poster={posterBackround}>
           {imdbRating !== "N/A" && <BadgeRating rating={imdbRating} movieTitle={title} />}
           <BadgeFavorite
             isFavorite={isFavorite}
@@ -60,7 +64,14 @@ export const MovieCard = ({ movie }: IProps) => {
             <FavoriteIcon />
           </BadgeFavorite>
         </Poster>
-        <NameMovie>{title}</NameMovie>
+        <NameMovie
+          whileHover={{ scale: 1.1 }}
+          whileTap={{
+            scale: 1,
+          }}
+        >
+          {title}
+        </NameMovie>
         <Categories>
           {genre.map((genre) => {
             return <CategoryItem key={genre}>{genre}</CategoryItem>;
@@ -69,4 +80,4 @@ export const MovieCard = ({ movie }: IProps) => {
       </StyledMovieCard>
     </Link>
   );
-};
+});

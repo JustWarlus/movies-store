@@ -26,6 +26,9 @@ const SettingBlockInputs = styled.div`
   width: 100%;
   display: flex;
   gap: 60px;
+  @media (max-width: 385px) {
+    display: block;
+  }
 `;
 
 const Label = styled.label`
@@ -105,7 +108,11 @@ const Button = styled.button`
   box-sizing: border-box;
   border-radius: 10px;
   cursor: pointer;
+
   ${Typography.SUBLINE_BUTTON}
+  @media (max-width: 385px) {
+    width: 45%;
+  }
   &:first-child {
     background: ${Color.GRAPHITE};
   }

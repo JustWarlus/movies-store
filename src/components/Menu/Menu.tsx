@@ -4,13 +4,13 @@ import { PAGE } from "router";
 import { StyledMenu, Navigation, Copirate, LinkText } from "./style";
 import { CustomNavLink } from "components";
 import { useWindowSize } from "hooks";
-
+import { memo } from "react";
 interface IProps {
   handleClose: () => void;
   isMenuOpen: boolean;
 }
 
-export const Menu = ({ handleClose, isMenuOpen }: IProps) => {
+export const Menu = memo(({ handleClose, isMenuOpen }: IProps) => {
   const { width = 0 } = useWindowSize();
   return (
     <StyledMenu $isMenuOpen={isMenuOpen}>
@@ -41,4 +41,4 @@ export const Menu = ({ handleClose, isMenuOpen }: IProps) => {
       <Copirate>© All Rights Reserved</Copirate>
     </StyledMenu>
   );
-};
+});

@@ -39,4 +39,5 @@ export const router = createBrowserRouter(
       </Route>
     </>,
   ),
+  { basename: "/movies-store" },
 );

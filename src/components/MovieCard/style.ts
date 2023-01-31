@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Indents, Typography } from "ui";
 
@@ -29,6 +30,19 @@ const BadgeFavorite = styled.div<IFavorite>`
 const StyledMovieCard = styled.div`
   width: 266px;
 
+  @media (max-width: 670px) {
+    width: 200px;
+  }
+
+  @media (max-width: 485px) {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 385px) {
+    width: 75%;
+  }
+
   &:hover ${BadgeFavorite} {
     display: flex;
   }
@@ -45,11 +59,20 @@ const Poster = styled.div<IPoster>`
   ${Indents.LEVEL_6}
   background-image: url(${({ $poster }) => $poster});
   background-size: cover;
+
+  @media (max-width: 670px) {
+    min-width: 0;
+    min-height: 300px;
+    width: 100%;
+  }
 `;
-const NameMovie = styled.span`
+const NameMovie = styled(motion.span)`
   display: block;
   ${Typography.SUBLINE_SUB_PRIMARY}
   color: ${Color.WHITE};
+  &:hover {
+    color: ${Color.PRIMARY_MAIN};
+  }
 `;
 const Categories = styled.div`
   display: flex;

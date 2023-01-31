@@ -4,12 +4,13 @@ import { PAGE } from "router";
 import { FilterIcon } from "assets";
 import { Input, Search } from "./style";
 import { useAppDispatch, changeSearchValue } from "store";
+import { memo } from "react";
 
 interface IProps {
   toggleFilters: () => void;
 }
 
-export const SearchInput = ({ toggleFilters }: IProps) => {
+export const SearchInput = memo(({ toggleFilters }: IProps) => {
   const search = useInput();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -30,4 +31,4 @@ export const SearchInput = ({ toggleFilters }: IProps) => {
       <FilterIcon onClick={toggleFilters} />
     </Search>
   );
-};
+});

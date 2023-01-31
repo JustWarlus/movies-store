@@ -5,7 +5,6 @@ export const FavoritesPage = () => {
   const { favoriteMovies } = useAppSelector((state) => state.favorites);
   if (!favoriteMovies.length) {
     return <FavoriteEmpty />;
-  } else {
-    return <MovieList movies={favoriteMovies} isLoading={false} />;
   }
+  return <MovieList movies={favoriteMovies} isLoading={false} />;
 };

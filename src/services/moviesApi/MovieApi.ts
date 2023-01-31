@@ -10,7 +10,7 @@ interface IQuery {
 
 export const movieApi = createApi({
   reducerPath: "movieAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://www.omdbapi.com/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_KEY_API_URL }),
 
   endpoints: (build) => ({
     getMovieById: build.query<IMovieInfoAPI, string | undefined>({

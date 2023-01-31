@@ -15,4 +15,13 @@ const ErrorMessage = styled.span`
   color: ${Color.ERROR};
 `;
 
-export { Form, Input, LabelName, Label, ErrorMessage, Button };
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: ${Color.WHITE};
+  ${Typography.H1}
+`;
+
+export { Form, Input, LabelName, Label, ErrorMessage, Button, Title };

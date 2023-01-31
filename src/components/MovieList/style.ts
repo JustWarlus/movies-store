@@ -19,11 +19,18 @@ const StyledMovieList = styled.div`
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+  @media (max-width: 490px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const ButtonConainer = styled.div`
   width: 100%;
   margin: 40px 0 0;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
 `;
 
 export { StyledMovieList, ButtonConainer };

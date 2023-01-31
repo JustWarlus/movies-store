@@ -4,12 +4,12 @@ import { movieApi } from "services";
 import { IMovieInfoAPI } from "types";
 import { StyledRecomendation, Title, MovieList, Button, ControlPanel, Panel } from "./style";
 import { useRef, useState } from "react";
-
+import { memo } from "react";
 interface IProps {
   movie: IMovieInfoAPI;
 }
 
-export const Recomendation = ({ movie }: IProps) => {
+export const Recomendation = memo(({ movie }: IProps) => {
   const { data, isError } = movieApi.useGetMovieByTitleQuery({
     title: movie.Title.split(" ").at(-1) as string,
   });
@@ -69,4 +69,4 @@ export const Recomendation = ({ movie }: IProps) => {
       </MovieList>
     </StyledRecomendation>
   );
-};
+});

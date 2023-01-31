@@ -13,6 +13,14 @@ const Input = styled.input`
   border: 2px solid ${Color.GRAPHITE};
   outline: none;
 
+  @media (max-width: 670px) {
+    padding: 8px 56px 8px 20px;
+  }
+
+  @media (max-width: 485px) {
+    padding: 5px 56px 5px 20px;
+  }
+
   &:focus {
     border: 2px solid ${Color.PRIMARY_MAIN};
     color: ${Color.WHITE};
@@ -35,6 +43,14 @@ const Search = styled.form`
     top: 16px;
     right: 16px;
     cursor: pointer;
+
+    @media (max-width: 670px) {
+      top: 12px;
+    }
+
+    @media (max-width: 670px) {
+      top: 8px;
+    }
   }
 `;
 

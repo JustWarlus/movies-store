@@ -1,13 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+import { IFilterApi } from "types";
 
-export const KEY_FILTER_API = "T87SNDA-ZCF4QKN-JM8GEYB-RMT78RG";
+export const KEY_FILTER_API = process.env.REACT_APP_KEY_API_DOP;
 
 export const filtersApi = createApi({
   reducerPath: "filtersApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api.kinopoisk.dev" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_KEY_API_URL_DOP }),
 
   endpoints: (build) => ({
-    getFilter: build.query<any, string | undefined>({
+    getFilter: build.query<IFilterApi, string | undefined>({
       query: ({
         movieName,
         yearFrom,
@@ -15,7 +16,7 @@ export const filtersApi = createApi({
         ratingFrom,
         ratingTo,
         genres,
-        sortField = "externalId.imdb",
+        typeSort = "externalId.imdb",
       }: any) => ({
         url: `/movie?token=${KEY_FILTER_API}${
           movieName ? `&field=alternativeName&search=${movieName}&isStrict=false` : ""
@@ -23,7 +24,7 @@ export const filtersApi = createApi({
           yearTo ? yearTo : "2023"
         }&field=rating.imdb&search=${ratingFrom ? ratingFrom : "1"}-${ratingTo ? ratingTo : "10"}&${
           genres ? `field=genres.name&search=${genres.value}` : ""
-        }&sortField=${sortField}&sortType=1&sortField=externalId.imdb&sortType=-1&selectFields=externalId.imdb`,
+        }&sortField=${typeSort}&sortType=1&sortField=externalId.imdb&sortType=-1&selectFields=externalId.imdb`,
       }),
     }),
   }),

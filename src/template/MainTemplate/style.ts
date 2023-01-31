@@ -14,6 +14,14 @@ const StyledMainTemplate = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
   }
+
+  @media (max-width: 670px) {
+    padding: 48px 40px;
+  }
+
+  @media (max-width: 485px) {
+    padding: 85px 16px 48px;
+  }
 `;
 
 const StyledLogo = styled(Link)`

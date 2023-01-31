@@ -12,6 +12,10 @@ const StyledFilters = styled.div`
   position: fixed;
   right: 0;
   top: 0;
+  @media (max-width: 520px) {
+    min-width: 0;
+    width: 100%;
+  }
 `;
 
 const TopPanel = styled.div`
@@ -42,6 +46,11 @@ const Label = styled.label`
 const Input = styled.input`
   display: block;
   width: 100%;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   ${input}
 `;
@@ -125,7 +134,7 @@ const BlockInputs = styled.div`
 `;
 
 const ControlePanel = styled.div`
-  margin-top: 40px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   gap: 25px;
@@ -159,6 +168,34 @@ const StylesCrossIcon = styled(CrossIcon)`
   }
 `;
 
+const ControlSort = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 3px;
+  box-sizing: border-box;
+  background: ${Color.GRAPHITE};
+  border-radius: 10px;
+`;
+
+interface ITabSortProps {
+  $isActive: boolean;
+}
+
+const TabSort = styled.div<ITabSortProps>`
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${Color.WHITE};
+  border-radius: 10px;
+  background: ${({ $isActive }) => ($isActive ? Color.DARK : Color.GRAPHITE)};
+  ${Typography.SUBLINE_SUB_PRIMARY};
+`;
+
 export {
   StyledFilters,
   TopPanel,
@@ -172,5 +209,7 @@ export {
   BlockInputs,
   ControlePanel,
   Button,
+  ControlSort,
+  TabSort,
   stylesSelect,
 };

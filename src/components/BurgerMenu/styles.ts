@@ -10,6 +10,18 @@ const StyledBurger = styled.div`
   box-sizing: border-box;
   border-radius: 10px;
   cursor: pointer;
+
+  svg {
+    @media (max-width: 670px) {
+      height: 24px;
+      width: 24px;
+    }
+
+    @media (max-width: 385px) {
+      height: 20px;
+      width: 20px;
+    }
+  }
 `;
 
 export { StyledBurger };

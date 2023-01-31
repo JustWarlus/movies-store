@@ -7,10 +7,8 @@ import "./firebase/firebase";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <>
+  <Provider store={store}>
     <GlobalStyles />
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </>,
+    <App />
+  </Provider>,
 );

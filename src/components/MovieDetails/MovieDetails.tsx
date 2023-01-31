@@ -23,7 +23,7 @@ import {
   Buttom,
   TableBody,
 } from "./style";
-
+import { memo } from "react";
 interface IProps {
   movie: IMovieInfoAPI;
 }
@@ -39,7 +39,7 @@ const tableInfo: TableInfoKey[] = [
   "Writer",
 ];
 
-export const MovieDetails = ({ movie }: IProps) => {
+export const MovieDetails = memo(({ movie }: IProps) => {
   const genreMovie = movie.Genre.split(", ");
 
   const dispatch = useAppDispatch();
@@ -99,4 +99,4 @@ export const MovieDetails = ({ movie }: IProps) => {
       </MovieInfo>
     </Movie>
   );
-};
+});

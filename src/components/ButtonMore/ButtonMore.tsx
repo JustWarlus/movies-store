@@ -1,10 +1,10 @@
-import React from "react";
 import { Button } from "./style";
-
+import { memo } from "react";
 interface IProps {
   onClick: () => void;
+  label: string;
 }
 
-export const ButtonMore = ({ onClick }: IProps) => {
-  return <Button onClick={onClick}>Show more</Button>;
-};
+export const ButtonMore = memo(({ onClick, label }: IProps) => {
+  return <Button onClick={onClick}>{label}</Button>;
+});

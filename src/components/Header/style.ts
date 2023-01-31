@@ -17,6 +17,22 @@ const StyledHeader = styled.header`
   }
 `;
 
-const StyledLogo = styled(Link)``;
+const StyledLogo = styled(Link)`
+  svg {
+    @media (max-width: 670px) {
+      width: 100px;
+      display: block;
+    }
+
+    @media (max-width: 485px) {
+      width: 80px;
+    }
+  }
+
+  @media (max-width: 385px) {
+    position: absolute;
+    top: 35px;
+  }
+`;
 
 export { StyledHeader, StyledLogo };

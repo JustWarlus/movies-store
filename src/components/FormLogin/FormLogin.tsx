@@ -1,6 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PAGE } from "router";
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "store";
 import {
   StyledFrom,
@@ -17,6 +16,7 @@ import {
 } from "./style";
 import { Validation, validationForm } from "utilits";
 import { signInUser } from "store";
+import { useNavigateAfterAuth } from "hooks";
 interface IFormValues {
   email: string;
   password: string;
@@ -24,7 +24,7 @@ interface IFormValues {
 
 export const FormLogin = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  useNavigateAfterAuth(PAGE.HOME);
   const {
     register,
     handleSubmit,
@@ -33,7 +33,6 @@ export const FormLogin = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = ({ email, password }) => {
     dispatch(signInUser({ email, password }));
-    navigate(PAGE.HOME);
   };
 
   return (

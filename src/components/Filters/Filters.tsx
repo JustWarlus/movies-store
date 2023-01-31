@@ -11,26 +11,29 @@ import {
   ControlePanel,
   Button,
   StylesCrossIcon,
+  ControlSort,
+  TabSort,
   stylesSelect,
 } from "./style";
 import Select from "react-select";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { transformGenre } from "utilits";
 import { useAppDispatch } from "store";
+import { useState } from "react";
 import { changeSearchFilterValue } from "store";
 import { useNavigate } from "react-router-dom";
 import { PAGE } from "router";
-
+import { memo } from "react";
 interface IProps {
   toggleFilters: () => void;
 }
 
 interface IFilterValues {
   movieName: string;
-  yearFrom: string;
-  yearTo: string;
-  ratingFrom: string;
-  ratingTo: string;
+  yearFrom: number;
+  yearTo: number;
+  ratingFrom: number;
+  ratingTo: number;
   genres: IOption;
 }
 
@@ -39,14 +42,18 @@ interface IOption {
   value: string;
 }
 
-export const Filters = ({ toggleFilters }: IProps) => {
+export const Filters = memo(({ toggleFilters }: IProps) => {
+  const [typeSort, setTypeSort] = useState("externalId.imdb");
   const dispatch = useAppDispatch();
   const genres = transformGenre();
   const navigate = useNavigate();
-  const { register, handleSubmit, control, setValue } = useForm<IFilterValues>({
+  const { register, handleSubmit, control, resetField } = useForm<IFilterValues>({
     mode: "onSubmit",
   });
 
+  const getActiveSortTab = (type: string) => {
+    return type === typeSort;
+  };
   const getResultSearch: SubmitHandler<IFilterValues> = ({
     movieName,
     genres,
@@ -56,17 +63,26 @@ export const Filters = ({ toggleFilters }: IProps) => {
     ratingTo,
   }) => {
     dispatch(
-      changeSearchFilterValue({ movieName, genres, yearFrom, yearTo, ratingFrom, ratingTo }),
+      changeSearchFilterValue({
+        movieName,
+        genres,
+        yearFrom,
+        yearTo,
+        ratingFrom,
+        ratingTo,
+        typeSort,
+      }),
     );
     navigate(PAGE.FILTERS);
+    toggleFilters();
   };
 
   const clearForm = () => {
-    setValue("movieName", "");
-    setValue("yearFrom", "");
-    setValue("yearTo", "");
-    setValue("ratingFrom", "");
-    setValue("ratingTo", "");
+    resetField("movieName");
+    resetField("yearFrom");
+    resetField("yearTo");
+    resetField("ratingFrom");
+    resetField("ratingTo");
   };
 
   return (
@@ -78,6 +94,17 @@ export const Filters = ({ toggleFilters }: IProps) => {
       <Form onSubmit={handleSubmit(getResultSearch)}>
         <LabelSort>
           <NameInput>Sort by</NameInput>
+          <ControlSort>
+            <TabSort onClick={() => setTypeSort("year")} $isActive={getActiveSortTab("year")}>
+              Year
+            </TabSort>
+            <TabSort
+              onClick={() => setTypeSort("externalId.imdb")}
+              $isActive={getActiveSortTab("externalId.imdb")}
+            >
+              Rating
+            </TabSort>
+          </ControlSort>
         </LabelSort>
         <Label>
           <NameInput>Full or short movie name</NameInput>
@@ -103,15 +130,51 @@ export const Filters = ({ toggleFilters }: IProps) => {
         <Label>
           <NameInput>Year</NameInput>
           <BlockInputs>
-            <Input placeholder="From" {...register("yearFrom")} />
-            <Input placeholder="To" {...register("yearTo")} />
+            <Input
+              placeholder="From"
+              type="number"
+              {...register("yearFrom", {
+                minLength: 4,
+                maxLength: 4,
+                min: 1950,
+                max: 2023,
+              })}
+            />
+            <Input
+              placeholder="To"
+              type="number"
+              {...register("yearTo", {
+                minLength: 4,
+                maxLength: 4,
+                min: 1950,
+                max: 2023,
+              })}
+            />
           </BlockInputs>
         </Label>
         <Label>
           <NameInput>Rating</NameInput>
           <BlockInputs>
-            <Input placeholder="From" {...register("ratingFrom")} />
-            <Input placeholder="To" {...register("ratingTo")} />
+            <Input
+              placeholder="From"
+              type="number"
+              {...register("ratingFrom", {
+                minLength: 1,
+                maxLength: 2,
+                min: 1,
+                max: 10,
+              })}
+            />
+            <Input
+              placeholder="To"
+              type="number"
+              {...register("ratingTo", {
+                minLength: 1,
+                maxLength: 2,
+                min: 1,
+                max: 10,
+              })}
+            />
           </BlockInputs>
         </Label>
         <ControlePanel>
@@ -128,4 +191,4 @@ export const Filters = ({ toggleFilters }: IProps) => {
       </Form>
     </StyledFilters>
   );
-};
+});

@@ -5,6 +5,14 @@ import {
   IMoviePoster,
   IDataMoviePosterApi,
   LocalStorageKey,
+  IFilterApi,
 } from "./types";
 export { LocalStorageKey };
-export type { IMovieInfoAPI, TableInfoKey, IMoviePosterAPI, IMoviePoster, IDataMoviePosterApi };
+export type {
+  IMovieInfoAPI,
+  TableInfoKey,
+  IMoviePosterAPI,
+  IMoviePoster,
+  IDataMoviePosterApi,
+  IFilterApi,
+};

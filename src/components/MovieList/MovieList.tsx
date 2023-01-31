@@ -2,7 +2,7 @@ import { SkeletonMovieCard } from "components";
 import { IMoviePosterAPI, IMovieInfoAPI } from "types";
 import { MovieCard } from "components";
 import { StyledMovieList } from "./style";
-
+import { memo } from "react";
 interface IFilter {
   imdbID: string;
 }
@@ -10,10 +10,11 @@ interface IFilter {
 interface IProps {
   movies: IMoviePosterAPI[] | IMovieInfoAPI[] | IFilter[];
   isLoading: boolean;
+  isFetching?: boolean;
 }
 
-export const MovieList = ({ movies, isLoading }: IProps) => {
-  if (isLoading) {
+export const MovieList = memo(({ movies, isLoading, isFetching }: IProps) => {
+  if (isLoading || isFetching) {
     [...new Array(8)].map((_, index) => {
       return <SkeletonMovieCard key={index} />;
     });
@@ -25,4 +26,4 @@ export const MovieList = ({ movies, isLoading }: IProps) => {
       })}
     </StyledMovieList>
   );
-};
+});

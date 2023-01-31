@@ -15,7 +15,7 @@ import {
 } from "./style";
 import { Validation, validationForm } from "utilits";
 import { signUpUser } from "store";
-import { useNavigate } from "react-router-dom";
+import { useNavigateAfterAuth } from "hooks";
 
 type Inputs = {
   userName: string;
@@ -26,7 +26,7 @@ type Inputs = {
 
 export const FormRegistration = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  useNavigateAfterAuth(PAGE.HOME);
 
   const {
     register,
@@ -37,7 +37,6 @@ export const FormRegistration = () => {
 
   const handleSignUp: SubmitHandler<Inputs> = ({ userName, email, password }) => {
     dispatch(signUpUser({ userName, email, password }));
-    navigate(PAGE.HOME);
   };
 
   return (

@@ -1,28 +1,26 @@
 import { getAvatarProfile, getNameProfile } from "helpers";
-import { Link } from "react-router-dom";
-import { PAGE } from "router";
-import { logOutUser } from "store";
-import { useAppDispatch, useAppSelector } from "store";
+import { useAppSelector } from "store";
 import { ProfileDefaultIcon } from "assets";
 import { StyledProfile, Name, Arrow, ProfileAvatar } from "./style";
+import { Link } from "react-router-dom";
+import { PAGE } from "router";
+import { useToggle } from "hooks";
+import { ProfileMenu } from "components";
 
 export const Profile = () => {
+  const [isOpen, setIsOpen] = useToggle(false);
   const { isAuth, email } = useAppSelector((state) => state.account);
-  const dispatch = useAppDispatch();
 
   if (isAuth && email) {
     const name = getNameProfile(email);
     const avatar = getAvatarProfile(email);
 
-    const logOut = () => {
-      dispatch(logOutUser());
-    };
-
     return (
-      <StyledProfile onClick={logOut}>
+      <StyledProfile onClick={setIsOpen}>
         <ProfileAvatar>{avatar}</ProfileAvatar>
         <Name>{name}</Name>
         <Arrow $isAuth={isAuth} />
+        <ProfileMenu isOpen={isOpen} toggleModal={setIsOpen} />
       </StyledProfile>
     );
   }

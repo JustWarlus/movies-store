@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { setThemesDark, setThemesLight, updateUserEmail } from "store";
 import {
@@ -20,6 +20,7 @@ import {
 } from "./style";
 import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
 import { Validation, validationForm } from "utilits";
+import { getNameProfile } from "helpers";
 
 interface ISettingsValues {
   userName: string;
@@ -31,6 +32,7 @@ interface ISettingsValues {
 
 export const Settings = () => {
   const { email, theme } = useAppSelector((state) => state.account);
+  const name = email ? getNameProfile(email) : "";
   const [isDark, setisDark] = useState<boolean>(theme === "dark");
   const dispatch = useAppDispatch();
   const toggleSwitch = () => {
@@ -47,7 +49,11 @@ export const Settings = () => {
   const { register, handleSubmit, setValue, getValues } = useForm<ISettingsValues>({
     mode: "onSubmit",
   });
-  email && setValue("userEmail", email);
+
+  useEffect(() => {
+    email && setValue("userEmail", email);
+    setValue("userName", name);
+  }, [email, name, setValue]);
   const changeInfoUser: SubmitHandler<ISettingsValues> = ({ userEmail }) => {
     dispatch(updateUserEmail({ userEmail }));
   };
@@ -142,7 +148,14 @@ export const Settings = () => {
           </Switch>
         </SettingsColorMode>
         <Controler>
-          <Button>Cancel</Button>
+          <Button
+            onClick={() => {
+              if (email) setValue("userEmail", email);
+              setValue("userName", name);
+            }}
+          >
+            Cancel
+          </Button>
           <Button type="submit">Save</Button>
         </Controler>
       </Form>

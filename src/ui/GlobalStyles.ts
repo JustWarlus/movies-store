@@ -6,6 +6,7 @@ import { Theme } from "./theme";
 export const GlobalStyles = createGlobalStyle`
     body{
         background: ${Color.BACKROUND};
+        overflow-x: hidden;
     }
     ${Theme}
     ${reset}
