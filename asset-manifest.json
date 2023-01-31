@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/movies-store/static/js/main.03c7db53.js",
+    "main.js": "/movies-store/static/js/main.b215d142.js",
     "static/media/backroundSignPage.png": "/movies-store/static/media/backroundSignPage.9bc11f531421e8117315.png",
     "static/media/notFound.svg": "/movies-store/static/media/notFound.d675174e548f560a43b95ccb24b4e1c5.svg",
     "static/media/logo-pixema.svg": "/movies-store/static/media/logo-pixema.02b3ff519726ca3fef8d64b51e2360a2.svg",
@@ -10,6 +10,7 @@
     "static/media/trends.svg": "/movies-store/static/media/trends.25f36342bf1d0bc2759cefda1b9bfbd9.svg",
     "static/media/home.svg": "/movies-store/static/media/home.177dde88b13668bfb83779d76d35d8b3.svg",
     "static/media/cross.svg": "/movies-store/static/media/cross.6024aa6a26426b9bcd02b35c5d3ff4a1.svg",
+    "static/media/crossBurger.svg": "/movies-store/static/media/crossBurger.7b013fb903923438393d0b73367349e1.svg",
     "static/media/profileDefault.svg": "/movies-store/static/media/profileDefault.bae5ea99771dfc66e25ea32d4794d571.svg",
     "static/media/favorite.svg": "/movies-store/static/media/favorite.df771a8d049afadd907dc093dcb61007.svg",
     "static/media/favorites.svg": "/movies-store/static/media/favorites.80bb06f7d0592e2f0d1aff0847b1f1ab.svg",
@@ -21,9 +22,9 @@
     "static/media/filter.svg": "/movies-store/static/media/filter.bf5cb80deddb4125c2cf016a5a46143f.svg",
     "static/media/searchMenu.svg": "/movies-store/static/media/searchMenu.bf5cb80deddb4125c2cf016a5a46143f.svg",
     "static/media/profileArrow.svg": "/movies-store/static/media/profileArrow.cf34074ce06615563bbe6a8631cc0bf8.svg",
-    "main.03c7db53.js.map": "/movies-store/static/js/main.03c7db53.js.map"
+    "main.b215d142.js.map": "/movies-store/static/js/main.b215d142.js.map"
   },
   "entrypoints": [
-    "static/js/main.03c7db53.js"
+    "static/js/main.b215d142.js"
   ]
 }
