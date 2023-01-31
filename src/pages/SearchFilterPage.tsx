@@ -1,14 +1,21 @@
-import { MovieList } from "components";
+import { MovieList, SkeletonMovieCard } from "components";
 import { useAppSelector } from "store";
 import { useGetFilterQuery } from "services";
 import { transformFilterApi } from "utilits";
 
 export const SearchFilterPage = () => {
   const { searchFilterValue } = useAppSelector((state) => state.filter);
-  const { data, isLoading, isFetching } = useGetFilterQuery(searchFilterValue);
-  if (data) {
-    const movies = transformFilterApi(data.docs);
-    return <MovieList movies={movies} isLoading={isLoading} isFetching={isFetching} />;
+  const { data, isLoading, isFetching, isError } = useGetFilterQuery(searchFilterValue);
+
+  if (isLoading) {
+    [...new Array(8)].map((_, index) => {
+      return <SkeletonMovieCard key={index} />;
+    });
   }
-  return <></>;
+  if (!data || isError) {
+    return <div>Ничего не найдено</div>;
+  }
+
+  const movies = transformFilterApi(data.docs);
+  return <MovieList movies={movies} isLoading={isLoading} isFetching={isFetching} />;
 };
