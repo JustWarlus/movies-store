@@ -48,6 +48,9 @@ const Input = styled.input`
   color: ${Color.WHITE};
   width: 100%;
   ${input}
+  &:disabled {
+    background: ${Color.GRAPHITE};
+  }
 `;
 
 const Description = styled.span`

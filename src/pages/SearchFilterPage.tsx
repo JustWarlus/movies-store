@@ -1,4 +1,4 @@
-import { MovieList, SkeletonMovieCard } from "components";
+import { FavoriteEmpty, MovieList, SkeletonMovieCard } from "components";
 import { useAppSelector } from "store";
 import { useGetFilterQuery } from "services";
 import { transformFilterApi } from "utilits";
@@ -13,7 +13,7 @@ export const SearchFilterPage = () => {
     });
   }
   if (!data || isError) {
-    return <div>Ничего не найдено</div>;
+    return <FavoriteEmpty />;
   }
 
   const movies = transformFilterApi(data.docs);

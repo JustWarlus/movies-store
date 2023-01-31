@@ -16,12 +16,14 @@ import { ReactComponent as ArrowSliderIcon } from "./icons/arrow.svg";
 import { ReactComponent as CrossIcon } from "./icons/cross.svg";
 import { ReactComponent as BurgerMenuIcon } from "./icons/burgerMenu.svg";
 import { ReactComponent as ProfileMenuIcon } from "./icons/profileIconMenu.svg";
+import { ReactComponent as CrossBurgerIcon } from "./icons/crossBurger.svg";
 import backroundSign from "./images/backroundSignPage.png";
 
 export {
   LogoIcon,
   SearchMenuIcon,
   BurgerMenuIcon,
+  CrossBurgerIcon,
   CrossIcon,
   ProfileMenuIcon,
   HomeIcon,

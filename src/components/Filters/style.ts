@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Color, input, Typography } from "ui";
 import { CrossIcon } from "assets";
 import { StylesConfig } from "react-select";
+interface IInput {
+  $isError?: boolean;
+}
 
 const StyledFilters = styled.div`
   padding: 40px;
@@ -10,6 +13,7 @@ const StyledFilters = styled.div`
   height: 100%;
   background: ${Color.DARK};
   position: fixed;
+  overflow-y: scroll;
   right: 0;
   top: 0;
   @media (max-width: 520px) {
@@ -43,7 +47,7 @@ const Label = styled.label`
   display: block;
   margin-top: 25px;
 `;
-const Input = styled.input`
+const Input = styled.input<IInput>`
   display: block;
   width: 100%;
   &::-webkit-outer-spin-button,
@@ -52,7 +56,8 @@ const Input = styled.input`
     margin: 0;
   }
 
-  ${input}
+  ${input};
+  border: 2px solid ${({ $isError }) => ($isError ? Color.ERROR : Color.GRAPHITE)};
 `;
 
 const stylesSelect: StylesConfig = {
@@ -147,12 +152,16 @@ const Button = styled.button`
   color: ${Color.WHITE};
   border-radius: 10px;
   width: 100%;
+
   ${Typography.SUBLINE_BUTTON}
   &:first-child {
     background: ${Color.GRAPHITE};
   }
   &:last-child {
     background: ${Color.PRIMARY_SUB};
+    &:disabled {
+      background: ${Color.LIGHT};
+    }
     &:hover {
       background: ${Color.PRIMARY_MAIN};
     }

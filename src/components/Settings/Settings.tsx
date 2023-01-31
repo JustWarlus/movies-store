@@ -86,6 +86,7 @@ export const Settings = () => {
               <Input
                 placeholder="Your password"
                 type="password"
+                disabled={true}
                 {...register("password", {
                   pattern: {
                     value: /(?=.*[0-9])(?=.*[a-zA-Z]).{8,30}/,
@@ -103,6 +104,7 @@ export const Settings = () => {
               <Input
                 placeholder="Your password"
                 type="password"
+                disabled={true}
                 {...register("newPassword", {
                   pattern: {
                     value: /(?=.*[0-9])(?=.*[a-zA-Z]).{8,30}/,
@@ -118,6 +120,7 @@ export const Settings = () => {
               <Input
                 placeholder="Confirm password"
                 type="password"
+                disabled={true}
                 {...register("confirmPassword", {
                   pattern: {
                     value: /(?=.*[0-9])(?=.*[a-zA-Z]).{8,30}/,

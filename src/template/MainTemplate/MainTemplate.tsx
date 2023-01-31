@@ -18,7 +18,7 @@ export const MainTemplate = () => {
       <StyledLogo to={PAGE.HOME}>
         <LogoIcon />
       </StyledLogo>
-      <Header toggleFilters={toggleFilters} toggleMenu={toggleMenu} />
+      <Header toggleFilters={toggleFilters} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
       <Menu handleClose={toggleMenu} isMenuOpen={isMenuOpen} />
       <StyledOutlet />
       {isFilters && <Filters toggleFilters={toggleFilters} />}

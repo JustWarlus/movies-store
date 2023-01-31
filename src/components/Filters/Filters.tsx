@@ -47,8 +47,14 @@ export const Filters = memo(({ toggleFilters }: IProps) => {
   const dispatch = useAppDispatch();
   const genres = transformGenre();
   const navigate = useNavigate();
-  const { register, handleSubmit, control, resetField } = useForm<IFilterValues>({
-    mode: "onSubmit",
+  const {
+    register,
+    handleSubmit,
+    control,
+    resetField,
+    formState: { errors, isValid },
+  } = useForm<IFilterValues>({
+    mode: "onChange",
   });
 
   const getActiveSortTab = (type: string) => {
@@ -84,7 +90,6 @@ export const Filters = memo(({ toggleFilters }: IProps) => {
     resetField("ratingFrom");
     resetField("ratingTo");
   };
-
   return (
     <StyledFilters>
       <TopPanel>
@@ -139,10 +144,12 @@ export const Filters = memo(({ toggleFilters }: IProps) => {
                 min: 1950,
                 max: 2023,
               })}
+              $isError={Boolean(errors.yearFrom)}
             />
             <Input
               placeholder="To"
               type="number"
+              $isError={Boolean(errors.yearTo)}
               {...register("yearTo", {
                 minLength: 4,
                 maxLength: 4,
@@ -158,6 +165,7 @@ export const Filters = memo(({ toggleFilters }: IProps) => {
             <Input
               placeholder="From"
               type="number"
+              $isError={Boolean(errors.ratingFrom)}
               {...register("ratingFrom", {
                 minLength: 1,
                 maxLength: 2,
@@ -168,6 +176,7 @@ export const Filters = memo(({ toggleFilters }: IProps) => {
             <Input
               placeholder="To"
               type="number"
+              $isError={Boolean(errors.ratingTo)}
               {...register("ratingTo", {
                 minLength: 1,
                 maxLength: 2,
@@ -186,7 +195,9 @@ export const Filters = memo(({ toggleFilters }: IProps) => {
           >
             Clear filters
           </Button>
-          <Button type="submit">Show results</Button>
+          <Button type="submit" disabled={!isValid}>
+            Show results
+          </Button>
         </ControlePanel>
       </Form>
     </StyledFilters>

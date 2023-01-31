@@ -9,9 +9,10 @@ import { memo } from "react";
 interface IProps {
   toggleFilters: () => void;
   toggleMenu: () => void;
+  isMenuOpen: boolean;
 }
 
-export const Header = memo(({ toggleFilters, toggleMenu }: IProps) => {
+export const Header = memo(({ toggleFilters, toggleMenu, isMenuOpen }: IProps) => {
   const { width = 0 } = useWindowSize();
   return (
     <StyledHeader>
@@ -21,7 +22,7 @@ export const Header = memo(({ toggleFilters, toggleMenu }: IProps) => {
         </StyledLogo>
       )}
       <SearchInput toggleFilters={toggleFilters} />
-      {width > 900 ? <Profile /> : <BurgerMenu toggleMenu={toggleMenu} />}
+      {width > 900 ? <Profile /> : <BurgerMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />}
     </StyledHeader>
   );
 });
